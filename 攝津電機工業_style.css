@@ -1,0 +1,416 @@
+/* =========================================================
+   攝津電機工業株式会社 コーポレートサイト
+   Design System  ─ Concept: CONTROL THE FUTURE / 精密機器トーン
+   配色: 白基調 × コーポレートブルー#004098(主役) × イエロー#ffd800(アクセント)
+   （現行サイト sd-kogyo.co.jp の実カラーに準拠）
+   フォント: Murecho(見出) / IBM Plex Sans JP(本文) / Space Grotesk(欧文) / Space Mono(数値)
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&display=swap');
+:root{
+  /* --ink = コーポレートブルー#004098。紺の面(白文字)としても、白地の見出し色としても使う主役色 */
+  --ink:#004098; --ink-800:#003a8a; --ink-700:#00347d; --ink-600:#1a56a8;
+  --panel:#0a4ba8; --panel-2:#1356b0;
+  --base:#f8f8f8; --base-200:#eef1f5; --base-300:#cdd6e4; --white:#fff;
+  --yellow:#ffd800; --yellow-600:#b89600; --yellow-700:#a08400;
+  --yellow-tint:rgba(255,216,0,.16); --yellow-soft:rgba(255,216,0,.22);
+  --eblue:#004098; --eblue-tint:rgba(0,64,152,.08);
+  --text:#1a1a1a; --text-sub:#5a6473; --line:#dfe3ea;
+  --on-dark:#eef3fb; --on-dark-sub:#b9c6dc; --line-dark:rgba(255,255,255,.16);
+  --f-head:"Murecho",sans-serif; --f-body:"IBM Plex Sans JP",sans-serif;
+  --f-en:"Space Grotesk",sans-serif; --f-mono:"Space Mono",monospace;
+  --f-num:"Oswald","Space Grotesk",sans-serif; /* 大きな数値・年号用の洗練フォント */
+  --ease:cubic-bezier(.22,.61,.36,1); --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);color:var(--text);background:var(--base);line-height:1.85;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+section{position:relative}
+
+/* ---- 共通タイポ ---- */
+.en-label{font-family:var(--f-en);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:10px}
+.en-label::before{content:"";width:26px;height:2px;background:var(--yellow);display:inline-block}
+.en-label.on-dark{color:var(--yellow)}
+.sec-h{font-family:var(--f-head);font-weight:800;font-size:clamp(26px,3.6vw,40px);line-height:1.3;letter-spacing:.01em;margin:14px 0 0}
+.sec-lead{color:var(--text-sub);margin-top:14px;max-width:640px;font-size:15px}
+.num-mono{font-family:var(--f-mono);font-weight:700}
+
+/* ---- ボタン ---- */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-head);font-weight:700;font-size:14px;padding:15px 30px;border-radius:2px;transition:.3s var(--ease);position:relative}
+.btn .ar{font-family:var(--f-mono);transition:.3s var(--ease)}
+.btn-primary{background:var(--yellow);color:var(--ink)}
+.btn-primary:hover{background:var(--ink);color:var(--yellow);box-shadow:0 8px 26px rgba(20,24,29,.28)}
+.btn-primary:hover .ar{transform:translateX(5px)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-ghost:hover .ar{transform:translateX(5px)}
+.btn-light{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.btn-light:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+
+/* ---- ヘッダー ---- */
+.hd{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,57,128,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-dark);transition:.35s var(--ease)}
+.hd-in{max-width:1320px;margin:0 auto;padding:0 28px;height:74px;display:flex;align-items:center;gap:26px}
+.hd-logo{display:flex;align-items:center;gap:12px}
+.hd-logo img{height:30px}
+.hd-logo .nm{font-family:var(--f-head);font-weight:800;color:#fff;font-size:17px;letter-spacing:.04em;line-height:1.1}
+.hd-logo .nm small{display:block;font-family:var(--f-en);font-weight:500;font-size:9px;letter-spacing:.28em;color:var(--yellow);margin-top:2px}
+.gnav{display:flex;gap:26px;margin-left:auto}
+.gnav a{font-family:var(--f-head);font-weight:600;font-size:14px;color:var(--on-dark);position:relative;padding:6px 0;transition:.25s}
+.gnav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--yellow);transition:.3s var(--ease)}
+.gnav a:hover{color:#fff}.gnav a:hover::after{width:100%}
+.hd-cta{font-family:var(--f-head);font-weight:700;font-size:13px;background:var(--yellow);color:var(--ink);padding:11px 20px;border-radius:2px;transition:.3s}
+.hd-cta:hover{background:#fff}
+.burger{display:none;flex-direction:column;gap:5px;margin-left:auto;cursor:pointer;background:none;border:0;padding:6px}
+.burger span{width:26px;height:2px;background:#fff;transition:.3s}
+.burger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{position:fixed;inset:74px 0 auto 0;background:var(--ink);border-bottom:1px solid var(--line-dark);transform:translateY(-120%);transition:.4s var(--ease);z-index:99;padding:18px 28px 30px}
+.mnav.on{transform:translateY(0)}
+.mnav a{display:block;font-family:var(--f-head);font-weight:600;color:var(--on-dark);padding:14px 0;border-bottom:1px solid var(--line-dark)}
+.mnav a span{font-family:var(--f-mono);font-size:11px;color:var(--yellow);margin-right:12px}
+
+/* ---- 回路グリッド装飾 ---- */
+.circuit-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--line-dark) 1px,transparent 1px);background-size:54px 54px;pointer-events:none;opacity:.6}
+.node{position:absolute;width:8px;height:8px;background:var(--yellow);border-radius:50%;box-shadow:0 0 0 4px var(--yellow-tint)}
+
+/* ====== ① HERO : 型D モジュラー制御盤グリッド ====== */
+.hero{background:var(--ink);color:#fff;padding:130px 0 64px;position:relative;overflow:hidden}
+.hero .circuit-bg{opacity:.5}
+.hero::after{content:"";position:absolute;right:-160px;top:-160px;width:520px;height:520px;background:radial-gradient(circle,var(--yellow-soft),transparent 68%);pointer-events:none}
+.hero-in{position:relative;display:grid;grid-template-columns:1.95fr 1fr;grid-template-rows:auto auto;gap:16px}
+.hero-main{grid-row:1/3;border:1px solid var(--line-dark);border-radius:10px;overflow:hidden;position:relative;min-height:600px;display:flex;flex-direction:column;justify-content:flex-end;padding:52px}
+.hero-main .kv{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,29,.35),rgba(20,24,29,.92)),url("images/MV15_データ可視化オフィス_TECH-DASHBOARD.png") center/cover;filter:grayscale(.35) contrast(1.05)}
+.hero-main .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 5px,rgba(255,196,0,.035) 5px 6px);mix-blend-mode:screen;pointer-events:none}
+.hero-tag{position:absolute;top:26px;left:30px;font-family:var(--f-en);font-size:12px;letter-spacing:.22em;color:var(--yellow);z-index:2}
+.hero-tag b{color:#fff;font-weight:500}
+.hero-content{position:relative;z-index:2}
+.hero-h1{font-family:var(--f-head);font-weight:800;font-size:clamp(36px,5.2vw,64px);line-height:1.16;letter-spacing:.01em;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.hero-h1 .y{color:var(--yellow)}
+.hero-sub{margin-top:20px;font-size:16px;color:#dfe3e8;max-width:560px}
+.hero-tile{border:1px solid var(--line-dark);border-radius:10px;background:var(--panel);padding:22px 24px;position:relative;overflow:hidden;transition:.35s var(--ease)}
+.hero-tile:hover{border-color:rgba(255,196,0,.5);background:var(--panel-2)}
+.hero-tile .tlabel{font-family:var(--f-en);font-size:11px;letter-spacing:.2em;color:var(--on-dark-sub)}
+.tile-since .big{font-family:var(--f-num);font-weight:600;font-size:52px;color:var(--yellow);line-height:1.05;margin-top:6px;letter-spacing:.01em}
+.tile-since p{font-size:12.5px;color:var(--on-dark-sub);margin-top:4px}
+.tile-since .dot{position:absolute;top:20px;right:20px;width:9px;height:9px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px var(--yellow-tint);animation:blink 1.8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+.tile-biz{display:flex;flex-direction:column;gap:9px;justify-content:center}
+.tile-biz a{display:flex;align-items:center;justify-content:space-between;font-family:var(--f-head);font-weight:600;font-size:14px;color:#fff;padding:9px 0;border-bottom:1px solid var(--line-dark);transition:.25s}
+.tile-biz a:last-child{border-bottom:0}
+.tile-biz a .n{font-family:var(--f-mono);font-size:11px;color:var(--yellow)}
+.tile-biz a:hover{color:var(--yellow);padding-left:6px}
+/* z-index:5 で装飾ノード/グローより前面に。高さ固定・1行縦中央・はみ出しクリップ */
+.hero-ticker{position:relative;z-index:5;grid-column:1/3;border:1px solid var(--line-dark);border-radius:8px;background:#fff;display:flex;align-items:stretch;gap:0;overflow:hidden;height:56px}
+.hero-ticker .tk-h{position:relative;z-index:2;display:flex;align-items:center;gap:9px;background:var(--yellow);color:var(--ink);font-family:var(--f-en);font-weight:700;font-size:12px;letter-spacing:.18em;padding:0 18px;white-space:nowrap;flex-shrink:0;box-shadow:6px 0 8px -2px rgba(255,255,255,.9)}
+.tk-track{position:relative;z-index:1;display:flex;align-items:center;gap:48px;white-space:nowrap;animation:ticker 30s linear infinite;padding-left:34px;flex-shrink:0;min-width:max-content}
+.hero-ticker:hover .tk-track{animation-play-state:paused}
+.tk-track a{font-size:13px;color:#dfe3e8;display:inline-flex;gap:12px;align-items:center;line-height:1}
+.tk-track a time{font-family:var(--f-mono);font-size:11px;color:var(--yellow)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ====== ② 事業3領域 : 特大ナンバリング縦並び(マガジン・ジグザグ) ====== */
+.biz{background:var(--base);padding:104px 0}
+.biz-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:54px}
+.biz-row{display:grid;grid-template-columns:0.9fr 1.1fr;gap:46px;align-items:center;padding:46px 0;border-top:1px solid var(--line);position:relative}
+.biz-row:last-child{border-bottom:1px solid var(--line)}
+.biz-row.rev .biz-vis{order:2}
+.biz-vis{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/10;background:var(--ink)}
+.biz-vis img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.05);transition:.7s var(--ease)}
+.biz-row:hover .biz-vis img{transform:scale(1.06);filter:grayscale(0) contrast(1.05)}
+.biz-vis .corner{position:absolute;left:0;top:0;background:var(--yellow);color:var(--ink);font-family:var(--f-mono);font-weight:700;font-size:13px;padding:7px 16px;letter-spacing:.1em}
+.biz-txt .bnum{font-family:var(--f-num);font-weight:600;font-size:78px;line-height:.9;color:var(--base-300);letter-spacing:.01em}
+.biz-txt h3{font-family:var(--f-head);font-weight:800;font-size:25px;margin:8px 0 6px}
+.biz-txt h3 small{display:block;font-family:var(--f-en);font-size:12px;letter-spacing:.2em;color:var(--ink);font-weight:600;margin-bottom:10px}
+.biz-txt p{color:var(--text-sub);font-size:14.5px;max-width:460px}
+.biz-txt .more{display:inline-flex;gap:9px;align-items:center;margin-top:18px;font-family:var(--f-head);font-weight:700;font-size:14px;color:var(--ink);border-bottom:2px solid var(--yellow);padding-bottom:3px;transition:.25s}
+.biz-txt .more:hover{gap:15px}
+
+/* ====== ③ 強み : 横並び工程＋回路ライン ====== */
+.strength{background:var(--ink);color:#fff;padding:104px 0;overflow:hidden}
+.strength .circuit-bg{opacity:.4}
+.str-grid{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:54px}
+/* ノード中心(=上端から9px)を貫く点線。両端ノードの中心(10%/90%)を結ぶ */
+.str-grid::before{content:"";position:absolute;top:9px;left:10%;right:10%;height:2px;background:repeating-linear-gradient(90deg,var(--yellow) 0 14px,transparent 14px 26px);z-index:0}
+.str-step{position:relative;z-index:1;padding:0 14px;text-align:center}
+/* ノード=黄の塗り円＋紺の縁取り(背景と同色)で点線を“くぐらせる”。マージン0で上端=点線位置に揃える */
+.str-step .node{display:block;position:relative;z-index:1;width:18px;height:18px;border-radius:50%;background:var(--yellow);border:4px solid var(--ink);box-shadow:0 0 0 4px var(--yellow-tint);margin:0 auto 26px}
+.str-step .stp{font-family:var(--f-en);font-size:11px;letter-spacing:.2em;color:var(--yellow);font-weight:600}
+.str-step h4{font-family:var(--f-head);font-weight:700;font-size:18px;margin:6px 0 8px}
+.str-step p{font-size:12.5px;color:var(--on-dark-sub)}
+.str-note{margin-top:56px;border:1px solid var(--line-dark);border-radius:10px;padding:30px 34px;display:flex;gap:30px;align-items:center;flex-wrap:wrap;background:rgba(255,255,255,.02)}
+.str-note .qt{font-family:var(--f-head);font-weight:800;font-size:clamp(20px,2.6vw,30px);line-height:1.5;flex:1;min-width:280px}
+.str-note .qt em{font-style:normal;color:var(--yellow)}
+
+/* ====== ④ 数字 : 特大スタッツ帯 ====== */
+.stats{background:var(--yellow);color:var(--ink);padding:74px 0;position:relative;overflow:hidden}
+.stats::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(20,24,29,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,24,29,.05) 1px,transparent 1px);background-size:48px 48px}
+.stats-in{position:relative}
+.stats-head{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:40px}
+.stats-head .en-label{color:var(--ink)}.stats-head .en-label::before{background:var(--ink)}
+.stats-head h2{font-family:var(--f-head);font-weight:800;font-size:clamp(22px,3vw,32px);line-height:1.3}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);align-items:start}
+.stat{padding:8px 24px;border-left:2px solid rgba(20,24,29,.18)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat .n{font-weight:700;line-height:1.05;letter-spacing:.01em;min-height:62px;display:flex;align-items:baseline}
+.stat .n.num{font-family:var(--f-num);font-weight:600;font-size:clamp(44px,5.4vw,64px);line-height:1}
+.stat .n.word{font-family:var(--f-head);font-weight:800;font-size:clamp(20px,2.2vw,27px);line-height:1.25;align-items:center}
+.stat .n small{font-size:.42em;margin-left:2px}
+.stat .c{font-family:var(--f-head);font-weight:700;font-size:14px;margin-top:12px}
+.stat .s{font-size:12px;color:var(--on-dark-sub);margin-top:3px;line-height:1.6}
+
+/* ====== ⑤ 実績 : オフセット重ねカード(非対称) ====== */
+.works{background:var(--base);padding:104px 0}
+.works-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;margin-top:50px}
+.wk{position:relative;border-radius:10px;overflow:hidden;background:var(--ink);min-height:240px;display:flex;align-items:flex-end}
+.wk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.4) brightness(.7) contrast(1.05);transition:.7s var(--ease)}
+.wk:hover img{filter:grayscale(0) brightness(.78);transform:scale(1.05)}
+.wk-body{position:relative;z-index:2;padding:26px;color:#fff;width:100%}
+.wk-body .cat{font-family:var(--f-en);font-size:11px;letter-spacing:.18em;color:var(--yellow);font-weight:600}
+.wk-body h4{font-family:var(--f-head);font-weight:700;font-size:19px;margin-top:8px}
+.wk-body p{font-size:12.5px;color:#cfd4da;margin-top:6px}
+.wk.big{grid-column:span 7;min-height:380px}
+.wk.sm{grid-column:span 5;min-height:380px}
+.wk.t{grid-column:span 4;min-height:230px}
+.wk-tag{grid-column:span 12;display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;align-items:center}
+.wk-tag .lbl{font-family:var(--f-head);font-weight:700;color:var(--text-sub);font-size:13px;margin-right:6px}
+.wk-tag span{border:1px solid var(--line);border-radius:40px;padding:8px 18px;font-size:13px;color:var(--text-sub);transition:.25s;background:#fff}
+.wk-tag span:hover{border-color:var(--ink);color:var(--ink)}
+
+/* ====== ⑥ 品質・安全・セキュリティ : 全幅スプリット色面＋斜め ====== */
+.qa{background:var(--ink-800);color:#fff;padding:104px 0;position:relative;overflow:hidden}
+.qa::before{content:"";position:absolute;top:0;left:0;width:44%;height:100%;background:var(--panel);clip-path:polygon(0 0,100% 0,82% 100%,0 100%)}
+.qa-in{position:relative;display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}
+.qa-lead h2{font-family:var(--f-head);font-weight:800;font-size:clamp(26px,3.4vw,38px);line-height:1.35;margin:16px 0}
+.qa-lead h2 em{font-style:normal;color:var(--yellow)}
+.qa-lead p{color:var(--on-dark-sub);font-size:14.5px;max-width:380px}
+.qa-cards{display:grid;gap:16px}
+.qa-card{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:flex-start;border:1px solid var(--line-dark);border-radius:10px;padding:24px 26px;background:rgba(255,255,255,.02);transition:.35s var(--ease)}
+.qa-card:hover{border-color:rgba(255,196,0,.45);transform:translateX(6px)}
+.qa-ic{width:64px;height:64px;border:1.5px solid var(--yellow);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.qa-ic svg{width:30px;height:30px;stroke:var(--yellow);fill:none;stroke-width:1.6}
+.qa-card h4{font-family:var(--f-head);font-weight:700;font-size:18px}
+.qa-card h4 small{font-family:var(--f-en);display:block;font-size:11px;letter-spacing:.16em;color:var(--on-dark-sub);font-weight:500;margin-bottom:5px}
+.qa-card p{font-size:13.5px;color:var(--on-dark-sub);margin-top:4px}
+
+/* ====== ⑦ 会社・沿革 : 左固定sticky＋右タイムライン ====== */
+.company{background:var(--base);padding:104px 0}
+.co-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px;align-items:flex-start}
+.co-left{position:sticky;top:104px}
+.co-left .greet{margin-top:22px;border-left:3px solid var(--yellow);padding-left:20px}
+.co-left .greet p{color:var(--text-sub);font-size:14px;margin-bottom:12px}
+.co-left .greet .sign{font-family:var(--f-head);font-weight:800;font-size:17px;color:var(--ink);margin-top:8px}
+.co-left .greet .sign small{display:block;font-weight:500;color:var(--text-sub);font-size:12px}
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-i{position:relative;padding:0 0 34px}
+.tl-i:last-child{padding-bottom:0}
+.tl-i::before{content:"";position:absolute;left:-30px;top:5px;width:16px;height:16px;border-radius:50%;background:var(--base);border:3px solid var(--yellow)}
+.tl-i .y{font-family:var(--f-num);font-weight:600;font-size:21px;color:var(--ink);letter-spacing:.01em}
+.tl-i h4{font-family:var(--f-head);font-weight:700;font-size:16px;margin:2px 0 4px}
+.tl-i p{font-size:13.5px;color:var(--text-sub)}
+
+/* ====== ⑧ 採用 : フルブリード写真オーバーレイ ====== */
+.recruit{position:relative;color:#fff;padding:108px 0;background:var(--ink);overflow:hidden}
+.recruit .kv{position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,46,110,.96) 30%,rgba(0,57,128,.62)),url("images/MV16_グリーンスマート工場_FACTORY-GREEN.png") center/cover;filter:grayscale(.2) contrast(1.04)}
+.recruit-in{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.rec-l h2{font-family:var(--f-head);font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.3;margin:16px 0}
+.rec-l h2 .y{color:var(--yellow)}
+.rec-l p{color:#cfd4da;max-width:440px;margin-bottom:26px}
+.rec-cards{display:grid;gap:14px}
+.rec-card{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line-dark);border-radius:8px;padding:20px 24px;background:rgba(255,255,255,.03);transition:.3s var(--ease)}
+.rec-card:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.rec-card h4{font-family:var(--f-head);font-weight:700;font-size:17px}
+.rec-card span{font-family:var(--f-mono);font-size:12px;opacity:.8}
+.rec-card .ar{font-family:var(--f-mono);transition:.3s}
+.rec-card:hover .ar{transform:translateX(6px)}
+
+/* ====== ⑨ CTA ====== */
+.cta{background:var(--yellow);color:var(--ink);padding:84px 0;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;right:-100px;bottom:-140px;width:420px;height:420px;border:60px solid rgba(20,24,29,.06);border-radius:50%}
+.cta-in{position:relative;text-align:center}
+.cta h2{font-family:var(--f-head);font-weight:800;font-size:clamp(28px,4.2vw,48px);line-height:1.25}
+.cta p{margin:16px 0 30px;font-size:15px;color:#3a3520}
+.cta .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta .btn-primary{background:var(--ink);color:var(--yellow)}
+.cta .btn-primary:hover{background:#000}
+.cta .btn-ghost{border-color:var(--ink)}
+
+/* ---- フッター ---- */
+.ft{background:var(--ink);color:var(--on-dark-sub);padding:72px 0 30px;position:relative}
+.ft .circuit-bg{opacity:.3}
+.ft-in{position:relative;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+.ft-brand .hd-logo .nm{font-size:18px}
+.ft-brand p{font-size:13px;margin-top:18px;line-height:1.9}
+.ft-brand .tel{font-family:var(--f-num);color:var(--yellow);font-size:24px;margin-top:14px;font-weight:600;letter-spacing:.02em}
+.ft-col h5{font-family:var(--f-head);color:#fff;font-size:14px;margin-bottom:16px;letter-spacing:.04em}
+.ft-col a{display:block;font-size:13px;padding:6px 0;transition:.25s}
+.ft-col a:hover{color:var(--yellow);padding-left:5px}
+.ft-col a span{font-family:var(--f-mono);font-size:10px;color:var(--yellow);margin-right:7px}
+.ft-bot{position:relative;border-top:1px solid var(--line-dark);margin-top:48px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.05em}
+.ft-bot a:hover{color:var(--yellow)}
+
+/* ---- 下層ページ共通: ページヘッダー ---- */
+.page-hero{background:var(--ink);color:#fff;padding:150px 0 64px;position:relative;overflow:hidden}
+.page-hero .circuit-bg{opacity:.45}
+.page-hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;background:radial-gradient(circle,var(--yellow-soft),transparent 68%)}
+.page-hero-in{position:relative}
+.page-hero h1{font-family:var(--f-head);font-weight:800;font-size:clamp(30px,4.6vw,52px);margin-top:14px;line-height:1.2}
+.page-hero h1 .y{color:var(--yellow)}
+.crumb{font-family:var(--f-mono);font-size:11px;color:var(--on-dark-sub);margin-top:22px;letter-spacing:.05em}
+.crumb a:hover{color:var(--yellow)}.crumb span{color:var(--yellow);margin:0 8px}
+.sec-pad{padding:90px 0}
+.lead-blk{max-width:760px}
+.lead-blk .en-label{margin-bottom:14px}
+.prose p{margin-bottom:18px;color:#33393f}
+.tbl{width:100%;border-collapse:collapse;margin-top:10px;background:#fff;border:1px solid var(--line)}
+.tbl th,.tbl td{text-align:left;padding:16px 22px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
+.tbl th{background:var(--ink);color:#fff;font-family:var(--f-head);font-weight:600;width:210px;white-space:nowrap}
+.tbl tr:last-child th,.tbl tr:last-child td{border-bottom:0}
+.callout{background:var(--ink);color:#fff;border-radius:12px;padding:40px;position:relative;overflow:hidden}
+.callout .circuit-bg{opacity:.4}
+
+/* ---- reveal ---- */
+.rv{opacity:0;transform:translateY(28px);transition:.8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* =========================================================
+   現行サイト実カラー対応（白基調＋主役#004098＋アクセント#ffd800）
+   ダーク基調→ライト反転。紺の面には白文字、白地には濃色、黄は小面積アクセント。
+   ========================================================= */
+
+/* --- ① HERO : 暗い盤面 → 白キャンバス＋紺の精密パネル --- */
+.hero{background:#fff;color:var(--text)}
+.hero .circuit-bg{background-image:linear-gradient(rgba(0,64,152,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,64,152,.07) 1px,transparent 1px);opacity:1}
+.hero::after{background:radial-gradient(circle,var(--yellow-soft),transparent 70%)}
+/* メインの大パネルだけは紺の盤面（白文字）として残し“白×紺”を表現 */
+.hero-main{border-color:var(--ink)}
+/* 暗い紺オーバーレイを敷き、上に乗る文字は白でコントラスト確保 */
+.hero-main .kv{background:linear-gradient(180deg,rgba(0,40,98,.62),rgba(0,40,98,.95)),url("images/MV15_データ可視化オフィス_TECH-DASHBOARD.png") center/cover;filter:grayscale(.15) contrast(1.05)}
+.hero-main .scan{background:repeating-linear-gradient(0deg,transparent 0 5px,rgba(255,216,0,.04) 5px 6px)}
+.hero-content{color:#fff}
+.hero-h1{color:#fff}
+.hero-sub{color:#eaf1fc}
+/* サイドのタイル/ティッカーは白地＋紺文字＋黄アクセント */
+.hero-tile{background:#fff;border-color:var(--line)}
+.hero-tile:hover{background:#fff;border-color:var(--ink);box-shadow:0 10px 28px rgba(0,64,152,.10)}
+.hero-tile .tlabel{color:var(--text-sub)}
+.tile-since .big{color:var(--ink)}
+.tile-since .dot{background:var(--yellow);box-shadow:0 0 0 4px var(--yellow-tint)}
+.tile-since p{color:var(--text-sub)}
+.tile-biz a{color:var(--text);border-color:var(--line)}
+.tile-biz a:hover{color:var(--ink)}
+.tile-biz a .n{color:var(--ink)}
+.hero-ticker{background:#fff;border-color:var(--line)}
+.hero-ticker .tk-h{background:var(--yellow);color:var(--ink)}
+.tk-track a{color:var(--text)}
+.tk-track a time{color:var(--ink)}
+
+/* --- ④ 数字 : 全面イエロー帯 → 紺帯（白文字＋数字を黄アクセント） --- */
+.stats{background:var(--ink);color:#fff}
+.stats::before{background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px)}
+.stats-head .en-label{color:var(--yellow)}
+.stats-head .en-label::before{background:var(--yellow)}
+.stats-head h2{color:#fff}
+.stat{border-left-color:rgba(255,255,255,.20)}
+.stat .n{color:var(--yellow)}
+.stat .c{color:#fff}
+.stat .s{color:var(--on-dark-sub)}
+
+/* --- ⑨ CTA : 全面イエロー帯 → 紺帯（白文字＋黄ボタン） --- */
+.cta{background:var(--ink);color:#fff}
+.cta::before{border-color:rgba(255,255,255,.10)}
+.cta .en-label{color:var(--yellow)}
+.cta .en-label::before{background:var(--yellow)}
+.cta h2{color:#fff}
+.cta p{color:var(--on-dark-sub)}
+.cta .btn-primary{background:var(--yellow);color:var(--ink)}
+.cta .btn-primary:hover{background:#fff;color:var(--ink)}
+.cta .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.cta .btn-ghost:hover{background:#fff;color:var(--ink)}
+
+/* ===================== レスポンシブ ===================== */
+@media(max-width:980px){
+  .gnav,.hd-cta{display:none}.burger{display:flex}
+  .hero-in{grid-template-columns:1fr 1fr}.hero-main{grid-row:auto;grid-column:1/3;min-height:420px}
+  .qa::before{display:none}.qa-in,.co-grid,.recruit-in,.hero-ticker{grid-template-columns:1fr}
+  .hero-ticker{grid-column:1/3}
+  .co-left{position:static}
+  .biz-row{grid-template-columns:1fr;gap:24px}.biz-row.rev .biz-vis{order:0}
+  .str-grid{grid-template-columns:1fr 1fr;gap:20px}.str-grid::before{display:none}
+  .wk.big,.wk.sm,.wk.t{grid-column:span 12}
+  .ft-in{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .wrap{padding:0 18px}
+  .hero{padding:104px 0 44px}.hero-in{grid-template-columns:1fr}.hero-main{grid-column:1}
+  .hero-ticker{grid-column:1}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:18px 0}.stat{padding:14px 18px}.stat:nth-child(odd){border-left:0;padding-left:0}
+  .str-grid{grid-template-columns:1fr}.ft-in{grid-template-columns:1fr}
+  .biz-head{flex-direction:column;align-items:flex-start}
+  .page-hero{padding:120px 0 50px}.sec-pad{padding:60px 0}
+  .tbl th{width:130px;padding:13px 14px}.tbl td{padding:13px 14px}
+}
+
+/* =========================================================
+   ① HERO 壮大フルブリード版（2026-06-22 改修・後勝ちで上書き）
+   画像を全幅・大画面に。1947/OUR FIELD を画像の上にガラス調オーバーレイ。
+   ========================================================= */
+.hero{background:var(--ink);color:#fff;padding:0;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:100vh}
+.hero .circuit-bg{display:none}
+.hero::after{display:none}
+.hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 30%;background-repeat:no-repeat;filter:brightness(1.5) saturate(0.95) contrast(0.92);transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+/* ほぼ白基調：強い白ベールで全面を明るくし、うっすら青空・鉄塔が透ける軽やかな印象に。黒文字はくっきり */
+.hero-scrim{position:absolute;inset:0;z-index:1;background:
+  linear-gradient(180deg,rgba(255,255,255,.72) 0%,rgba(255,255,255,.8) 40%,rgba(255,255,255,.9) 72%,rgba(255,255,255,.97) 100%),
+  linear-gradient(100deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.2) 55%,rgba(255,255,255,.05) 100%)}
+.hero .scan{position:absolute;inset:0;z-index:1;background:repeating-linear-gradient(0deg,transparent 0 6px,rgba(255,216,0,.045) 6px 7px);mix-blend-mode:screen;pointer-events:none}
+.hero .node{z-index:2}
+.hero-in{position:relative;z-index:3;display:grid;grid-template-columns:1.55fr .8fr;gap:48px;align-items:end;width:100%;flex:1 1 auto;padding:170px 0 64px}
+.hero-content{align-self:end;max-width:780px}
+.hero-tag{position:static;margin-bottom:24px;font-family:var(--f-en);font-size:13px;letter-spacing:.24em;color:#004098}
+.hero-tag b{color:#1f2b39;font-weight:600}
+.hero-h1{color:#111418;font-family:var(--f-head);font-weight:800;font-size:clamp(38px,5.2vw,74px);line-height:1.1;letter-spacing:0;text-shadow:0 2px 12px rgba(255,255,255,.65)}
+.hero-h1 .y{color:#004098}
+.hero-sub{color:#1f2d3d;margin-top:28px;font-size:clamp(15px,1.5vw,19px);max-width:640px;line-height:1.95;text-shadow:0 1px 8px rgba(255,255,255,.6)}
+.hero-cards{align-self:end;display:flex;flex-direction:column;gap:16px}
+.hero-tile{background:rgba(255,255,255,.66);border:1px solid rgba(0,40,98,.16);border-radius:16px;backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 16px 40px -16px rgba(0,40,98,.4);padding:26px 28px;position:relative;overflow:hidden}
+.hero-tile:hover{background:rgba(255,255,255,.8);border-color:rgba(0,64,152,.45);box-shadow:0 16px 40px -14px rgba(0,40,98,.4)}
+.hero-tile .tlabel{color:#5a6675;font-family:var(--f-en);font-size:11px;letter-spacing:.2em}
+.tile-since .big{color:#004098;font-family:var(--f-num);font-weight:600;font-size:clamp(40px,3.4vw,58px);line-height:1.02;margin-top:4px;text-shadow:none}
+.tile-since p{color:#56616f;font-size:12.5px;margin-top:6px}
+.tile-since .dot{background:#ffc400;box-shadow:0 0 0 4px rgba(255,196,0,.28)}
+.tile-biz a{color:#1f2d3d;border-color:rgba(0,40,98,.14);font-family:var(--f-head);font-weight:600;font-size:15px;padding:12px 0}
+.tile-biz a:last-child{border-bottom:0}
+.tile-biz a:hover{color:#004098;padding-left:6px}
+.tile-biz a .n{color:#004098;font-family:var(--f-mono);font-size:11px}
+.hero-ticker{position:relative;z-index:4;grid-column:auto;width:100%;height:60px;border:0;border-top:1px solid rgba(255,255,255,.2);border-radius:0;background:rgba(0,22,60,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero-ticker .tk-h{background:var(--yellow);color:var(--ink);box-shadow:6px 0 10px -2px rgba(0,22,60,.5)}
+.tk-track a{color:#eef3fb}
+.tk-track a time{color:var(--yellow)}
+
+/* HERO 壮大版 レスポンシブ */
+@media(max-width:980px){
+  .hero{min-height:auto}
+  .hero-in{grid-template-columns:1fr;gap:30px;min-height:auto;padding:140px 0 54px}
+  .hero-content{max-width:none}
+  .hero-cards{flex-direction:row;flex-wrap:wrap}
+  .hero-tile{flex:1 1 260px}
+  .hero-ticker{grid-column:auto}
+}
+@media(max-width:600px){
+  .hero-in{padding:116px 0 44px}
+  .hero-cards{flex-direction:column;align-items:stretch}
+  .hero-tile{flex:0 0 auto;padding:18px 20px}
+  .hero-h1{font-size:clamp(36px,9.5vw,56px)}
+  .hero-sub{margin-top:20px}
+  .tile-since{padding:16px 20px}
+  .tile-since .big{font-size:38px;margin-top:2px}
+  .tile-since p{font-size:12px;margin-top:2px}
+}
+
+/* === 下層ページの見出しを明朝に（案A TOPと統一・2026-06改修） === */
+.page-hero h1,.sec-h{font-family:"Shippori Mincho B1","Noto Serif JP",serif;letter-spacing:.02em}

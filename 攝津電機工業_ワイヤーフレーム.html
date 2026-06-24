@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>攝津電機工業株式会社 コーポレートサイト ワイヤーフレーム</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2b2f36; --sub:#6b7280; --line:#c8ccd2; --wire:#e3e6ea; --wire2:#d6dade;
+  --bg:#f4f5f7; --white:#fff; --accent:#9aa0a8; --note:#b07a1e; --noteBg:#fff8e7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:#eceef1;line-height:1.7;font-size:14px}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.wire-box{background:var(--wire);border:1px dashed var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:12px;text-align:center;padding:12px}
+.lbl-en{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:6px}
+h2.sec-ttl{font-size:24px;font-weight:900;margin-bottom:6px}
+.sec-desc{color:var(--sub);font-size:13px;margin-bottom:20px}
+section{background:var(--white);border-bottom:1px solid #e0e3e7}
+.sec-inner{padding:56px 0}
+/* 設計意図ノート */
+.note{background:var(--noteBg);border-left:4px solid var(--note);color:#6a4e16;font-size:12px;padding:10px 14px;margin:0 0 22px;border-radius:0 4px 4px 0}
+.note b{color:var(--note)}
+.sec-tag{display:inline-block;background:var(--ink);color:#fff;font-family:"Space Mono",monospace;font-size:11px;padding:3px 10px;border-radius:3px;margin-bottom:14px;letter-spacing:.08em}
+/* ヘッダ */
+.wf-head{background:#fff;border-bottom:2px solid var(--line);position:sticky;top:0;z-index:20}
+.wf-head .container{display:flex;align-items:center;gap:20px;height:64px}
+.logo-box{width:150px;height:38px}
+.gnav{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap}
+.gnav span{font-size:13px;font-weight:700;color:var(--ink)}
+.head-cta{background:var(--ink);color:#fff;font-size:12px;padding:9px 16px;border-radius:4px;font-weight:700}
+/* ヒーロー モジュラーグリッド */
+.hero{background:#dfe2e6;padding:32px 0}
+.hero-grid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:14px}
+.hero-main{grid-row:1/3;min-height:380px;background:#cfd3d8;border:1px dashed #aab0b8;border-radius:8px;position:relative;display:flex;flex-direction:column;justify-content:center;padding:34px}
+.hero-main .kv-cap{position:absolute;top:14px;left:16px;font-family:"Space Mono",monospace;font-size:11px;color:#7d838c;letter-spacing:.15em}
+.hero-h1{font-size:34px;font-weight:900;line-height:1.35;color:#3a3f47}
+.hero-sub{margin-top:10px;color:#5c626b;font-size:14px}
+.tile{min-height:120px}
+.tile-stat{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:18px}
+.tile-stat .num{font-family:"Space Mono",monospace;font-size:30px;font-weight:700;color:#4a4f57}
+.ticker{grid-column:1/3;min-height:46px;display:flex;align-items:center;gap:14px;padding:0 18px;background:#cfd3d8;border:1px dashed #aab0b8;border-radius:6px}
+.ticker .t-en{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.15em;color:#7d838c}
+/* グリッド汎用 */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:#fafbfc;border:1px solid #e0e3e7;border-radius:8px;padding:18px}
+.card .ic{width:100%;height:120px;margin-bottom:12px}
+.card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.card p{font-size:12px;color:var(--sub)}
+.ph{color:var(--sub);font-size:12px}
+/* 工程図 */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+.step{background:#fafbfc;border:1px solid #e0e3e7;border-radius:8px;padding:14px;text-align:center;position:relative}
+.step .stp{font-family:"Space Mono",monospace;font-size:11px;color:var(--accent)}
+.step .sbox{height:64px;margin:8px 0}
+/* 数値パネル */
+.stat-panel{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#d6dade;border:1px solid #d6dade;border-radius:8px;overflow:hidden}
+.stat-cell{background:#f7f8f9;padding:24px 14px;text-align:center}
+.stat-cell .n{font-family:"Space Mono",monospace;font-size:30px;font-weight:700;color:#4a4f57}
+.stat-cell .c{font-size:12px;color:var(--sub);margin-top:4px}
+/* タイムライン */
+.timeline{display:flex;gap:0;overflow-x:auto;padding-bottom:8px}
+.tl-item{min-width:150px;border-top:2px solid var(--line);padding:14px 12px 0;position:relative}
+.tl-item .y{font-family:"Space Mono",monospace;font-weight:700;font-size:14px}
+.tl-item::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);position:absolute;top:-6px;left:12px}
+/* CTA */
+.cta{background:#d9dde1;border:1px dashed #aab0b8;border-radius:10px;padding:40px;text-align:center}
+.cta .btns{display:flex;gap:14px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.btn{padding:13px 26px;border-radius:6px;font-weight:700;font-size:13px}
+.btn-primary{background:#4a4f57;color:#fff}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+/* フッター */
+.wf-foot{background:#2b2f36;color:#cfd3d8}
+.wf-foot .sec-inner{padding:46px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:22px}
+.foot-grid h4{font-size:13px;color:#fff;margin-bottom:10px;font-weight:700}
+.foot-grid a,.foot-grid span{display:block;font-size:12px;color:#aeb4bc;margin-bottom:6px}
+.foot-logo{width:140px;height:36px;background:#3a3f47;border:1px dashed #5b616b;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#7d838c;font-size:11px;margin-bottom:12px}
+.copy{border-top:1px solid #3a3f47;margin-top:26px;padding-top:16px;font-size:11px;color:#7d838c;font-family:"Space Mono",monospace}
+/* デバイス枠 */
+.frame-bar{background:#2b2f36;color:#fff;text-align:center;font-size:12px;font-family:"Space Mono",monospace;padding:8px;letter-spacing:.1em}
+.device{max-width:430px;margin:0 auto;border:none}
+.sp .container{padding:0 16px}
+.sp .gnav{display:none}
+.sp .hamb{margin-left:auto;width:30px;height:22px;background:var(--wire);border:1px dashed var(--line);border-radius:3px}
+.sp .hero-grid{grid-template-columns:1fr}
+.sp .hero-main{grid-row:auto;min-height:260px}
+.sp .ticker{grid-column:auto}
+.sp .grid-3,.sp .grid-2,.sp .grid-4{grid-template-columns:1fr}
+.sp .process{grid-template-columns:1fr 1fr}
+.sp .stat-panel{grid-template-columns:1fr 1fr}
+.sp .foot-grid{grid-template-columns:1fr 1fr}
+.sp .hero-h1{font-size:24px}
+/* 要件メモ */
+.brief{background:#fffaf0;border:1px solid #e8d9b0;border-radius:10px;padding:24px 28px;margin:26px auto;max-width:1180px}
+.brief h2{font-size:18px;color:#6a4e16;margin-bottom:12px}
+.brief table{width:100%;border-collapse:collapse;font-size:12.5px}
+.brief td{border-bottom:1px solid #ecdfc0;padding:7px 8px;vertical-align:top}
+.brief td:first-child{width:150px;font-weight:700;color:#6a4e16;white-space:nowrap}
+.page-head{background:#2b2f36;color:#fff;text-align:center;padding:34px 16px}
+.page-head h1{font-size:22px;font-weight:900}
+.page-head p{font-size:12px;color:#aeb4bc;margin-top:8px;font-family:"Space Mono",monospace;letter-spacing:.1em}
+.legend{max-width:1180px;margin:18px auto;display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--sub);padding:0 24px}
+.legend .lg{display:flex;align-items:center;gap:7px}
+.legend .sw{width:26px;height:16px;border-radius:3px}
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <h1>攝津電機工業株式会社 ─ コーポレートサイト ワイヤーフレーム（TOPページ）</h1>
+  <p>WIREFRAME / HERO TYPE D : MODULAR CONTROL-PANEL GRID / PC + SP</p>
+</div>
+
+<!-- ===== 要件メモ ===== -->
+<div class="brief">
+  <h2>■ 要件メモ（現サイト・要望・トンマナ参照先）</h2>
+  <table>
+    <tr><td>クライアント</td><td>攝津電機工業株式会社（大阪府箕面市・1947年創業／電気設計・配電盤・制御盤メーカー）※インフォネット経由・制作ITLINE</td></tr>
+    <tr><td>現サイト</td><td>http://www.sd-kogyo.co.jp/ （リニューアル対象。現サイトの写真を取得して使用）</td></tr>
+    <tr><td>目的</td><td>①セキュリティ脆弱性の解消 ②箕面市内→広域の認知向上 ③近未来的・先進的な企業イメージ ④最新Web技術での構築</td></tr>
+    <tr><td>ターゲット</td><td>取引先企業 / 求職者 / 地域住民（BtoB中心＋採用＋地域）</td></tr>
+    <tr><td>トンマナ参照</td><td>近未来・先進／新井組（重厚信頼）・京都銀行採用（親しみ）・西部電気（同業先進）／競合：GF。企画コンセプト＝「制御盤／HMIダッシュボード」</td></tr>
+    <tr><td>必須要素</td><td>ニュースリリース欄／お問い合わせ／（将来）動画・SNS・チャットボット。WordPress継続・サーバー移行（ドメイン/メール維持）</td></tr>
+    <tr><td>ヒーロー型</td><td><b>D：非対称モジュラーグリッド（制御盤UI）</b> ／ 配色=グラファイト×SDイエロー ／ 見出し=Murecho（WFはNoto Sans JP代替表示）</td></tr>
+    <tr><td>予算/納期</td><td>イニシャル300万円(税込)／着手2026年7月・納期2026年10月末</td></tr>
+  </table>
+</div>
+
+<div class="legend">
+  <div class="lg"><span class="sw" style="background:#e3e6ea;border:1px dashed #c8ccd2"></span>画像/写真プレースホルダ（現サイト画像・新規撮影）</div>
+  <div class="lg"><span class="sw" style="background:#fff8e7;border-left:4px solid #b07a1e"></span>設計意図の注記</div>
+  <div class="lg"><span class="sw" style="background:#2b2f36"></span>ダーク面（制御盤・本番ではグラファイト#14181D）</div>
+</div>
+
+<!-- ============================== PC版 ============================== -->
+<div class="frame-bar">▼ PC ( 1180px ) ▼</div>
+<div id="pc">
+
+  <!-- ヘッダー -->
+  <header class="wf-head">
+    <div class="container">
+      <div class="logo-box wire-box">SDロゴ（横組）</div>
+      <nav class="gnav">
+        <span>攝津電機工業について</span><span>事業内容</span><span>実績</span>
+        <span>品質・安全</span><span>採用情報</span><span>お知らせ</span>
+      </nav>
+      <span class="head-cta">お問い合わせ</span>
+    </div>
+  </header>
+
+  <!-- ① ヒーロー：モジュラーグリッド -->
+  <section class="hero">
+    <div class="container">
+      <div class="note"><b>①ヒーロー（型D・制御盤グリッド）</b>：本業＝制御盤メーカーゆえUI自体を盤面に見立てる。大KV＋稼働数値タイル＋事業導線＋ニュースティッカーを冒頭に同居させ「何の会社か・実績・最新情報」を1画面で把握。要望のニュースリリースを最上部から可視化。</div>
+      <div class="hero-grid">
+        <div class="hero-main">
+          <span class="kv-cap">CONTROL THE FUTURE / SINCE 1947</span>
+          <div class="hero-h1">制御するチカラが、<br>社会を動かす。</div>
+          <div class="hero-sub">電気設計から製作・施工まで一気通貫。官公庁インフラと民間プラントを支える攝津電機工業。<br>（メインビジュアル＝現サイトの制御盤／工場／インフラ写真をダーク基調でグレーディング）</div>
+        </div>
+        <div class="wire-box tile tile-stat"><span class="lbl-en">SINCE</span><span class="num">1947</span><span class="ph">1947年創業の信頼</span></div>
+        <div class="wire-box tile" style="flex-direction:column;padding:16px">事業3領域への即アクセス<br>（官公庁／民間／制御盤）</div>
+        <div class="ticker"><span class="t-en">NEWS</span><span class="ph">▶ お知らせ・ニュースリリースを横流し（最新3〜5件・要望の必須要素）</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② 事業3領域 -->
+  <section><div class="container sec-inner">
+    <div class="sec-tag">02 / BUSINESS</div>
+    <div class="note"><b>②事業領域を最初に</b>：製造業の説得順は「まず何ができる会社か」。3領域を並置し各ターゲット（官公庁・民間・調達担当）を入口で振り分ける。実績セクションと相互リンク。</div>
+    <span class="lbl-en">Our Business</span>
+    <h2 class="sec-ttl">3つの事業領域</h2>
+    <p class="sec-desc">電気のトータルソリューション ─ 相談・設計から製作・施工まで。</p>
+    <div class="grid-3">
+      <div class="card"><div class="ic wire-box">官公庁インフラ 写真</div><h3>官公庁向けソリューション</h3><p>上下水道・道路などインフラの設計・製作・施工</p></div>
+      <div class="card"><div class="ic wire-box">プラント 写真</div><h3>民間企業向けソリューション</h3><p>工場の生産設備・各種プラントの省力化／効率化</p></div>
+      <div class="card"><div class="ic wire-box">制御盤 写真</div><h3>配電盤・制御盤の製作</h3><p>自社の中核技術。設計〜製作〜施工を一貫対応</p></div>
+    </div>
+  </div></section>
+
+  <!-- ③ 技術・強み（工程図） -->
+  <section><div class="container sec-inner">
+    <div class="sec-tag">03 / STRENGTH</div>
+    <div class="note"><b>③強み＝一気通貫プロセス</b>：競合との差別化は「相談〜施工までトータル」。工程を横スクロール図で可視化し、技術力と窓口一本化の安心を伝える。</div>
+    <span class="lbl-en">Our Strength</span>
+    <h2 class="sec-ttl">相談から施工まで、ワンストップ</h2>
+    <p class="sec-desc">設計事務所でも施工会社でもない、電気を“トータルで”手がける技術力。</p>
+    <div class="process">
+      <div class="step"><span class="stp">STEP 01</span><div class="sbox wire-box">相談</div>ご相談・課題ヒアリング</div>
+      <div class="step"><span class="stp">STEP 02</span><div class="sbox wire-box">電気設計</div>電気設計</div>
+      <div class="step"><span class="stp">STEP 03</span><div class="sbox wire-box">製作</div>盤製作</div>
+      <div class="step"><span class="stp">STEP 04</span><div class="sbox wire-box">施工</div>現場施工</div>
+      <div class="step"><span class="stp">STEP 05</span><div class="sbox wire-box">保守</div>保守・サポート</div>
+    </div>
+  </div></section>
+
+  <!-- ④ 数字で見る -->
+  <section style="background:#f0f2f4"><div class="container sec-inner">
+    <div class="sec-tag">04 / DATA</div>
+    <div class="note"><b>④数字で信頼の根拠</b>：地域認知の低さを「客観データ」で補強。等幅フォントの計器パネル表示で先進・正確の世界観を強化（本番はカウントアップ演出）。</div>
+    <span class="lbl-en">Settsu in Numbers</span>
+    <h2 class="sec-ttl">数字で見る攝津電機工業</h2>
+    <p class="sec-desc">※数値は現サイト・会社概要資料の確定値に差し替え。</p>
+    <div class="stat-panel">
+      <div class="stat-cell"><div class="n">1947</div><div class="c">創業年</div></div>
+      <div class="stat-cell"><div class="n">56</div><div class="c">従業員数（名）</div></div>
+      <div class="stat-cell"><div class="n">15.2<small>億</small></div><div class="c">売上高（円）</div></div>
+      <div class="stat-cell"><div class="n">000<small>+</small></div><div class="c">有資格者／実績件数 等</div></div>
+    </div>
+  </div></section>
+
+  <!-- ⑤ 導入事例・実績 -->
+  <section><div class="container sec-inner">
+    <div class="sec-tag">05 / WORKS</div>
+    <div class="note"><b>⑤実績で“見えない貢献”を可視化</b>：社会インフラ＝普段は目に触れない仕事。「こんなところに攝津電機工業」で地域住民の認知UPと取引先の信頼を両立。</div>
+    <span class="lbl-en">Works &amp; Cases</span>
+    <h2 class="sec-ttl">こんなところに、攝津電機工業</h2>
+    <p class="sec-desc">導入事例 / 主要取引先 ─ 暮らしと産業を支える実績。</p>
+    <div class="grid-3">
+      <div class="card"><div class="ic wire-box">事例 写真</div><h3>導入事例 01</h3><p>上下水道インフラ／自治体案件 など</p></div>
+      <div class="card"><div class="ic wire-box">事例 写真</div><h3>導入事例 02</h3><p>工場生産設備の省力化 など</p></div>
+      <div class="card"><div class="ic wire-box">事例 写真</div><h3>導入事例 03</h3><p>プラント制御盤 など</p></div>
+    </div>
+    <div style="margin-top:16px" class="wire-box" >主要取引先一覧（ロゴ並べ／守秘配慮で表記は要確認）</div>
+  </div></section>
+
+  <!-- ⑥ 品質・安全・セキュリティ -->
+  <section style="background:#eceef1"><div class="container sec-inner">
+    <div class="sec-tag">06 / QUALITY</div>
+    <div class="note"><b>⑥品質・安全・セキュリティ</b>：今回リニューアルの最重要動機（堅牢さ）をコンテンツでも明示。製造の品質保証＋Webセキュリティ刷新の姿勢を訴求し他社提案と差別化。</div>
+    <span class="lbl-en">Quality &amp; Safety</span>
+    <h2 class="sec-ttl">品質・安全への取り組み</h2>
+    <div class="grid-3">
+      <div class="card"><div class="ic wire-box">図版</div><h3>品質管理</h3><p>設計〜製作〜検査の管理体制</p></div>
+      <div class="card"><div class="ic wire-box">図版</div><h3>安全・有資格者</h3><p>電気工事士等の有資格者体制</p></div>
+      <div class="card"><div class="ic wire-box">図版</div><h3>SDGs・環境</h3><p>省エネ・環境配慮への取り組み（★新規）</p></div>
+    </div>
+  </div></section>
+
+  <!-- ⑦ 会社情報・沿革 -->
+  <section><div class="container sec-inner">
+    <div class="sec-tag">07 / COMPANY</div>
+    <div class="note"><b>⑦会社情報・沿革</b>：1947年からの歩みをタイムラインで。老舗の信頼＝箕面の地域企業としてのストーリーを補強。</div>
+    <span class="lbl-en">Company / History</span>
+    <h2 class="sec-ttl">攝津電機工業について</h2>
+    <div class="grid-2" style="margin-bottom:22px">
+      <div class="wire-box" style="min-height:150px">ご挨拶／社長メッセージ（写真＋テキストが入ります。）</div>
+      <div class="wire-box" style="min-height:150px">会社概要・組織図・グループ会社・経営数字／決算公告 への導線</div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="y">1947</div><div class="ph">創業</div></div>
+      <div class="tl-item"><div class="y">19XX</div><div class="ph">法人化・本社（箕面）</div></div>
+      <div class="tl-item"><div class="y">19XX</div><div class="ph">拠点拡大（四国・九州 等）</div></div>
+      <div class="tl-item"><div class="y">20XX</div><div class="ph">主要実績・受注</div></div>
+      <div class="tl-item"><div class="y">2026</div><div class="ph">サイトリニューアル</div></div>
+    </div>
+  </div></section>
+
+  <!-- ⑧ 採用ゲートウェイ -->
+  <section style="background:#f0f2f4"><div class="container sec-inner">
+    <div class="sec-tag">08 / RECRUIT</div>
+    <div class="note"><b>⑧採用ゲートウェイ</b>：ターゲットの一角＝求職者。第2フェーズの採用サイトへの布石として「人・文化」入口を設置（社員写真・募集要項導線）。</div>
+    <span class="lbl-en">Recruit</span>
+    <h2 class="sec-ttl">人と、未来をつくる。</h2>
+    <div class="grid-3">
+      <div class="card"><div class="ic wire-box">社員 写真</div><h3>社長メッセージ</h3><p>働く環境・想い</p></div>
+      <div class="card"><div class="ic wire-box">職場 写真</div><h3>新卒採用</h3><p>新卒要項</p></div>
+      <div class="card"><div class="ic wire-box">職場 写真</div><h3>中途採用</h3><p>中途要項（第2フェーズ：社員インタビュー・座談会★）</p></div>
+    </div>
+  </div></section>
+
+  <!-- ⑨ CTA -->
+  <section><div class="container sec-inner">
+    <div class="sec-tag">09 / CONTACT</div>
+    <div class="note"><b>⑨CTA</b>：BtoBの問い合わせ／求人／取材を一括導線化。フッター直前で行動を喚起。（将来チャットボット枠もここに）</div>
+    <div class="cta">
+      <span class="lbl-en">Contact</span>
+      <h2 class="sec-ttl" style="margin-top:6px">ご相談・お見積りはお気軽に</h2>
+      <p class="sec-desc" style="margin:8px 0 0">電気設計・制御盤・インフラのことなら攝津電機工業へ。</p>
+      <div class="btns"><span class="btn btn-primary">お問い合わせフォーム</span><span class="btn btn-ghost">資料請求</span><span class="btn btn-ghost">採用エントリー</span></div>
+    </div>
+  </div></section>
+
+  <!-- フッター：全展開サイトマップ -->
+  <footer class="wf-foot"><div class="container sec-inner">
+    <div class="note" style="background:#3a3f47;border-left-color:#9aa0a8;color:#cfd3d8"><b style="color:#fff">フッター</b>：CLAUDE.md準拠で全展開サイトマップ型。下層全ページへ網羅導線＋会社情報・法的ページ。</div>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">SDロゴ（白/反転）</div>
+        <span>攝津電機工業株式会社</span><span>大阪府箕面市稲6-2-1</span><span>TEL 072-729-2341</span>
+      </div>
+      <div><h4>攝津電機工業について</h4><a>会社概要・沿革</a><a>ご挨拶</a><a>SDGs・環境★</a><a>組織図・資格者</a><a>グループ会社</a><a>経営数字・決算公告</a></div>
+      <div><h4>事業内容</h4><a>強み★</a><a>官公庁向け★</a><a>民間企業向け★</a><a>配電・制御盤</a></div>
+      <div><h4>実績・採用</h4><a>導入事例★</a><a>こんなところに攝津★</a><a>主要取引先★</a><a>社長メッセージ</a><a>新卒・中途要項</a></div>
+      <div><h4>その他</h4><a>お知らせ</a><a>よくある質問★</a><a>お問い合わせ</a><a>プライバシーポリシー</a></div>
+    </div>
+    <div class="copy">© SETTSU DENKI KOGYO CO., LTD. ─ WIREFRAME</div>
+  </div></footer>
+</div>
+
+<!-- ============================== SP版 ============================== -->
+<div class="frame-bar">▼ SP ( 〜430px ) ▼</div>
+<div class="device sp">
+  <header class="wf-head">
+    <div class="container">
+      <div class="logo-box wire-box" style="width:110px;height:32px">SDロゴ</div>
+      <div class="hamb"></div>
+    </div>
+  </header>
+
+  <section class="hero"><div class="container">
+    <div class="note"><b>①ヒーロー(SP)</b>：タイルを縦積み。KV→キャッチ→数値→事業導線→ニュースの順で親指フローに最適化。</div>
+    <div class="hero-grid">
+      <div class="hero-main"><span class="kv-cap">CONTROL THE FUTURE</span><div class="hero-h1">制御するチカラが、社会を動かす。</div><div class="hero-sub">電気設計〜製作・施工まで一気通貫（KV＝現サイト写真）</div></div>
+      <div class="wire-box tile tile-stat"><span class="lbl-en">SINCE</span><span class="num">1947</span></div>
+      <div class="wire-box tile" style="padding:14px">事業3領域への導線</div>
+      <div class="ticker"><span class="t-en">NEWS</span><span class="ph">▶ お知らせ流し</span></div>
+    </div>
+  </div></section>
+
+  <section><div class="container sec-inner">
+    <div class="sec-tag">02 BUSINESS</div><span class="lbl-en">Our Business</span><h2 class="sec-ttl">3つの事業領域</h2>
+    <div class="grid-3">
+      <div class="card"><div class="ic wire-box">官公庁</div><h3>官公庁向け</h3><p>上下水道・道路インフラ</p></div>
+      <div class="card"><div class="ic wire-box">民間</div><h3>民間企業向け</h3><p>生産設備・プラント省力化</p></div>
+      <div class="card"><div class="ic wire-box">制御盤</div><h3>配電・制御盤</h3><p>設計〜製作〜施工</p></div>
+    </div>
+  </div></section>
+
+  <section><div class="container sec-inner">
+    <div class="sec-tag">03 STRENGTH</div><span class="lbl-en">Strength</span><h2 class="sec-ttl">相談〜施工までワンストップ</h2>
+    <div class="process">
+      <div class="step"><span class="stp">01</span><div class="sbox wire-box">相談</div></div>
+      <div class="step"><span class="stp">02</span><div class="sbox wire-box">設計</div></div>
+      <div class="step"><span class="stp">03</span><div class="sbox wire-box">製作</div></div>
+      <div class="step"><span class="stp">04</span><div class="sbox wire-box">施工</div></div>
+    </div>
+  </div></section>
+
+  <section style="background:#f0f2f4"><div class="container sec-inner">
+    <div class="sec-tag">04 DATA</div><span class="lbl-en">In Numbers</span><h2 class="sec-ttl">数字で見る攝津電機</h2>
+    <div class="stat-panel"><div class="stat-cell"><div class="n">1947</div><div class="c">創業</div></div><div class="stat-cell"><div class="n">56</div><div class="c">従業員</div></div><div class="stat-cell"><div class="n">15.2億</div><div class="c">売上</div></div><div class="stat-cell"><div class="n">000+</div><div class="c">実績</div></div></div>
+  </div></section>
+
+  <section><div class="container sec-inner">
+    <div class="sec-tag">05 WORKS</div><span class="lbl-en">Works</span><h2 class="sec-ttl">こんなところに攝津電機</h2>
+    <div class="grid-3"><div class="card"><div class="ic wire-box">事例</div><h3>導入事例 01</h3></div><div class="card"><div class="ic wire-box">事例</div><h3>導入事例 02</h3></div></div>
+  </div></section>
+
+  <section style="background:#eceef1"><div class="container sec-inner">
+    <div class="sec-tag">06 QUALITY</div><span class="lbl-en">Quality</span><h2 class="sec-ttl">品質・安全・セキュリティ</h2>
+    <div class="grid-3"><div class="card"><div class="ic wire-box">図版</div><h3>品質管理</h3></div><div class="card"><div class="ic wire-box">図版</div><h3>SDGs・環境★</h3></div></div>
+  </div></section>
+
+  <section><div class="container sec-inner">
+    <div class="sec-tag">07 COMPANY</div><span class="lbl-en">Company</span><h2 class="sec-ttl">攝津電機工業について</h2>
+    <div class="wire-box" style="min-height:120px;margin-bottom:14px">ご挨拶・会社概要・沿革タイムライン</div>
+  </div></section>
+
+  <section style="background:#f0f2f4"><div class="container sec-inner">
+    <div class="sec-tag">08 RECRUIT</div><span class="lbl-en">Recruit</span><h2 class="sec-ttl">人と、未来をつくる。</h2>
+    <div class="grid-3"><div class="card"><div class="ic wire-box">社員</div><h3>採用情報</h3></div></div>
+  </div></section>
+
+  <section><div class="container sec-inner">
+    <div class="cta"><span class="lbl-en">Contact</span><h2 class="sec-ttl" style="margin-top:6px">ご相談はお気軽に</h2><div class="btns"><span class="btn btn-primary">お問い合わせ</span><span class="btn btn-ghost">資料請求</span></div></div>
+  </div></section>
+
+  <footer class="wf-foot"><div class="container sec-inner">
+    <div class="foot-grid"><div><div class="foot-logo">SDロゴ</div><span>攝津電機工業株式会社</span></div><div><h4>事業内容</h4><a>官公庁/民間/制御盤</a></div></div>
+    <div class="copy">© SETTSU DENKI KOGYO</div>
+  </div></footer>
+</div>
+
+</body>
+</html>

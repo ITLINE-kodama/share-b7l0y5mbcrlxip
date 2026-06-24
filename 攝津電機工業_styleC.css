@@ -1,0 +1,37 @@
+/* =========================================================
+   攝津電機工業 デザイン案C 下層ページ用ダークテーマ
+   共有 style.css の後に読み込み、変数と一部サーフェスを上書きして
+   案C（ダーク・ネイビー／HMI／シアン）に統一する。
+   ========================================================= */
+:root{
+  --base:#0a1832; --base-200:#0f2342; --base-300:#1b3760;
+  --text:#e9f1f8; --text-sub:#9fb2c6;
+  --line:rgba(126,170,210,.16); --line-dark:rgba(126,170,210,.18);
+  --ink:#102a4e; --ink-800:#0c2244; --ink-700:#0a1d3a; --ink-600:#1a3a64;
+  --yellow:#2fe3c4; --yellow-600:#16b89c; --yellow-700:#0f9e86;
+  --yellow-tint:rgba(47,227,196,.14); --yellow-soft:rgba(47,227,196,.18);
+  --on-dark:#e9f1f8; --on-dark-sub:#9fb2c6;
+  --f-head:"Zen Kaku Gothic New",sans-serif; --f-body:"Zen Kaku Gothic New",sans-serif;
+  --f-num:"Share Tech Mono",monospace; --f-en:"Space Grotesk",sans-serif;
+}
+body{background:var(--base);color:var(--text)}
+/* 見出しは案Cと同じゴシックへ（共有CSSの明朝指定を上書き） */
+.page-hero h1,.sec-h{font-family:"Zen Kaku Gothic New",sans-serif !important;font-weight:700;letter-spacing:.01em}
+/* ヘッダーを案Cと同じダーク基調に */
+.hd{background:rgba(8,20,42,.82);border-bottom:1px solid var(--line)}
+.hd-cta{color:#06152e}
+.hd-cta:hover{background:#fff}
+.circuit-bg{opacity:.4}
+/* 白背景サーフェスをダークパネルに */
+.tbl{background:#11284d;border-color:var(--line)}
+.tbl td{color:var(--text);border-color:var(--line)}
+.tbl th{background:#0b2040;color:#fff;border-color:var(--line)}
+.wk-tag span,.tags span{background:#11284d;border-color:var(--line);color:var(--text-sub)}
+.card,.box,.qa-card,.wk,.info,.panel,.note,.std-card{background:#11284d;border-color:var(--line)}
+/* 本文・補助テキスト */
+.prose,.greet p,.sec-lead,p{color:var(--text-sub)}
+.prose strong,.greet p strong,b{color:var(--text)}
+/* タイムライン（沿革）のノード */
+.tl-i::before{background:var(--base);border-color:var(--yellow)}
+/* リンクのホバー等は変数経由でシアンに自動追従 */
+/* CTA帯・フッターは --ink（ネイビー）で自動的に整う */

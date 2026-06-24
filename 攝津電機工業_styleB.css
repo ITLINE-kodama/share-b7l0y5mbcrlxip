@@ -1,0 +1,33 @@
+/* =========================================================
+   攝津電機工業 デザイン案B 下層ページ用テーマ
+   案B＝モノトーン（オフ白基調 × 黒インク × イエロー極小アクセント／ミニマル）。
+   共有 style.css の後に読み込み、変数と一部サーフェスを上書きする。
+   ========================================================= */
+:root{
+  --base:#F6F5F0; --base-200:#EDEBE3; --base-300:#E2E0D6; --white:#fff;
+  --text:#16161a; --text-sub:#6C6C66;
+  --line:rgba(22,22,26,.12); --line-dark:rgba(22,22,26,.14);
+  --ink:#0B0B0C; --ink-800:#16161a; --ink-700:#222228; --ink-600:#333;
+  --yellow:#FFC400; --yellow-600:#E0A800; --yellow-700:#c99800;
+  --yellow-tint:rgba(255,196,0,.16); --yellow-soft:rgba(255,196,0,.2);
+  --on-dark:#F6F5F0; --on-dark-sub:#c2c1ba;
+  --f-head:"Zen Kaku Gothic New",sans-serif; --f-body:"Zen Kaku Gothic New",sans-serif;
+}
+body{background:var(--base);color:var(--text)}
+/* 見出しはミニマルなゴシックへ（共有CSSの明朝指定を上書き） */
+.page-hero h1,.sec-h{font-family:"Zen Kaku Gothic New",sans-serif !important;font-weight:700;letter-spacing:.005em}
+/* ヘッダーをモノトーン基調に（黒×オフ白） */
+.hd{background:rgba(246,245,240,.9);border-bottom:1px solid var(--line)}
+.hd .gnav a,.hd .hd-logo .nm{color:var(--ink)}
+.hd .hd-logo .nm small{color:var(--text-sub)}
+.hd-cta{background:var(--ink);color:var(--base)}
+.hd-cta:hover{background:var(--yellow);color:var(--ink)}
+.burger span{background:var(--ink)}
+.circuit-bg{opacity:.3}
+/* テーブル・タグ */
+.tbl{background:#fff;border-color:var(--line)}
+.tbl th{background:var(--ink);color:var(--base);border-color:var(--line)}
+.tbl td{color:var(--text);border-color:var(--line)}
+.wk-tag span,.tags span{background:#fff;border-color:var(--line);color:var(--text-sub)}
+/* 沿革タイムラインのノード */
+.tl-i::before{background:var(--base);border-color:var(--ink)}

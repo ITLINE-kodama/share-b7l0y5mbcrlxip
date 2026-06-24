@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>攝津電機工業株式会社 ｜ CONTROL THE FUTURE ─ 制御するチカラが、社会を動かす。</title>
+<meta name="description" content="攝津電機工業株式会社は1947年創業、大阪府箕面市の電気設計・配電盤・制御盤メーカー。官公庁インフラから民間プラントまで、相談・設計・製作・施工をワンストップで。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- ★ ブランディング案B専用：Nunito Sans（欧文ディスプレイ・主役／museo-sans代替の幾何学サンセリフ）＋ Shippori Mincho（和文見出し・硬派）＋ Zen Kaku Gothic New（和文本文）＋ DM Mono（数値） -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   攝津電機工業株式会社 ─ デザイン案B「ブランディング重視」
+   コンセプト: SIGNAL ─ 余白とタイポグラフィのブランド表現
+   配色: 黒(#0B0B0C) × オフ白(#F6F5F0) ＋ イエロー極小アクセント
+   フォント: Space Grotesk(欧文主役) / Murecho(和文) / Space Mono(数値)
+   ヒーロー型: F ＝ 余白大ミニマル帯
+   ========================================================= */
+:root{
+  --ink:#0B0B0C; --ink-2:#16161a; --ink-3:#222228;
+  --paper:#F6F5F0; --paper-2:#EDEBE3; --paper-3:#E2E0D6; --white:#fff;
+  --yellow:#FFC400; --yellow-d:#E0A800;
+  --sub:#6C6C66; --sub-2:#9A9A92; --line:#16161a14; --line-d:#ffffff1a;
+  --f-en:"Nunito Sans",sans-serif; --f-jp:"Zen Kaku Gothic New",sans-serif; --f-jp-h:"Shippori Mincho",serif; --f-mono:"DM Mono",monospace;
+  --ease:cubic-bezier(.16,.84,.34,1); --maxw:1280px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-jp);color:var(--ink);background:var(--paper);line-height:1.9;font-size:15px;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--yellow);color:var(--ink)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+section{position:relative}
+
+/* ---- タイポ共通 ---- */
+.kicker{font-family:var(--f-en);font-size:11px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--sub);display:inline-flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:7px;height:7px;background:var(--yellow);border-radius:50%;flex:none}
+.kicker.dk{color:var(--sub-2)}
+.idx{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--sub)}
+.dsp{font-family:var(--f-en);font-weight:400;letter-spacing:-.02em;line-height:.96;text-transform:uppercase}
+.jp-h{font-family:var(--f-jp-h);font-weight:700;letter-spacing:.02em;line-height:1.4}
+.lead{color:var(--sub);font-size:15px;max-width:560px;line-height:1.95}
+
+/* ---- ボタン（極細・下線スタイル） ---- */
+.lnk{font-family:var(--f-en);font-weight:500;font-size:13px;letter-spacing:.08em;display:inline-flex;align-items:center;gap:12px;padding-bottom:6px;border-bottom:1px solid currentColor;transition:.4s var(--ease)}
+.lnk .ar{font-family:var(--f-mono);transition:.4s var(--ease)}
+.lnk:hover{color:var(--yellow-d)}
+.lnk:hover .ar{transform:translateX(7px)}
+.lnk.dk:hover{color:var(--yellow)}
+.btn{display:inline-flex;align-items:center;gap:14px;font-family:var(--f-en);font-weight:500;font-size:13px;letter-spacing:.06em;padding:17px 30px;border:1px solid var(--ink);border-radius:0;transition:.4s var(--ease)}
+.btn .ar{font-family:var(--f-mono)}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn:hover .ar{transform:translateX(6px)}
+.btn.fill{background:var(--ink);color:var(--paper)}
+.btn.fill:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.btn.dk{border-color:#ffffff55;color:var(--paper)}
+.btn.dk:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+
+/* ---- ヘッダー ---- */
+.hd{position:fixed;top:0;left:0;right:0;z-index:100;mix-blend-mode:normal;transition:.45s var(--ease)}
+.hd-in{max-width:1460px;margin:0 auto;padding:26px 40px;display:flex;align-items:center;gap:32px}
+.hd.mini{background:rgba(246,245,240,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hd.mini .hd-in{padding:16px 40px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand .mk{width:38px;height:38px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
+.brand .mk img{width:24px}
+.brand .nm{line-height:1.12}
+.brand .nm b{font-family:var(--f-jp);font-weight:700;font-size:16px;letter-spacing:.04em;display:block}
+.brand .nm small{font-family:var(--f-en);font-weight:500;font-size:9px;letter-spacing:.3em;color:var(--sub);text-transform:uppercase}
+.gnav{display:flex;gap:30px;margin-left:auto}
+.gnav a{font-family:var(--f-en);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);position:relative;padding:4px 0}
+.gnav a span{font-family:var(--f-mono);font-size:9px;color:var(--sub-2);margin-right:5px}
+.gnav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--yellow-d);transition:.4s var(--ease)}
+.gnav a:hover::after{width:100%}
+.hd-c{font-family:var(--f-en);font-weight:500;font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);padding:11px 20px;transition:.4s var(--ease)}
+.hd-c i{width:6px;height:6px;background:var(--yellow);border-radius:50%;display:inline-block}
+.hd-c:hover{background:var(--ink);color:var(--paper)}
+.burger{display:none;flex-direction:column;gap:6px;margin-left:auto;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:28px;height:1.5px;background:var(--ink);transition:.35s}
+.burger.on span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;background:var(--ink);color:var(--paper);z-index:99;transform:translateY(-100%);transition:.6s var(--ease);display:flex;flex-direction:column;justify-content:center;padding:0 40px}
+.mnav.on{transform:translateY(0)}
+.mnav a{font-family:var(--f-en);font-weight:400;font-size:34px;letter-spacing:.01em;text-transform:uppercase;color:var(--paper);padding:14px 0;border-bottom:1px solid var(--line-d);display:flex;align-items:baseline;gap:18px}
+.mnav a small{font-family:var(--f-mono);font-size:12px;color:var(--yellow)}
+.mnav a b{font-family:var(--f-jp);font-weight:400;font-size:16px;color:var(--sub-2);margin-left:auto}
+
+/* ====== ① HERO ── 型F：余白大ミニマル帯 ====== */
+.hero{padding:118px 0 60px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:50px;padding-top:0;align-items:end}
+.hero-l{min-width:0}
+.hero-l .eyebrow{font-family:var(--f-en);font-weight:500;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--sub);margin-bottom:30px}
+.hero-h{font-family:var(--f-en);font-weight:600;font-size:clamp(46px,7.4vw,108px);line-height:.94;letter-spacing:-.02em;text-transform:uppercase}
+.hero-h .l2{display:block;font-weight:700}
+.hero-h .dot{color:var(--yellow)}
+.hero-jp{font-family:var(--f-jp-h);font-weight:700;font-size:clamp(21px,2.7vw,32px);letter-spacing:.06em;margin-top:38px;line-height:1.55}
+.hero-sub{color:var(--sub);font-size:15px;margin-top:18px;max-width:440px}
+.hero-foot{display:flex;align-items:center;gap:26px;margin-top:46px}
+.hero-r{position:relative}
+.hero-r .ph{aspect-ratio:3/4.4;overflow:hidden;background:var(--ink);position:relative}
+.hero-r .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08);transition:1.2s var(--ease)}
+.hero-r:hover .ph img{filter:grayscale(.55) contrast(1.05);transform:scale(1.04)}
+.hero-r .cap{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;color:var(--sub);margin-top:12px;display:flex;justify-content:space-between}
+.hero-r .yb{position:absolute;left:-14px;top:30px;width:28px;height:28px;background:var(--yellow)}
+.scrollcue{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--sub);display:inline-flex;align-items:center;gap:10px}
+.scrollcue::after{content:"";width:46px;height:1px;background:var(--ink);display:inline-block;transform-origin:left;animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleX(0)}45%{transform:scaleX(1)}55%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+
+/* ====== marquee 帯 ====== */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:20px 0;margin-top:70px}
+.marq-tr{display:flex;gap:54px;white-space:nowrap;animation:marq 34s linear infinite;font-family:var(--f-en);font-weight:500;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.marq-tr i{color:var(--yellow-d);font-style:normal}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ====== ② 事業 ── エディトリアル・インデックス列 ====== */
+.news{padding:118px 0 8px}
+.news-list{border-top:1px solid var(--ink);margin-top:42px}
+.news-row{display:grid;grid-template-columns:128px 116px 1fr auto;gap:26px;align-items:center;padding:25px 6px;border-bottom:1px solid var(--line);transition:.45s var(--ease)}
+.news-row time{font-family:var(--f-mono);font-size:13px;letter-spacing:.05em;color:var(--sub)}
+.news-row .cat{font-family:var(--f-en);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);padding:5px 0;text-align:center}
+.news-row p{font-family:var(--f-jp);font-weight:500;font-size:15.5px;color:var(--ink-2);line-height:1.6}
+.news-row .ar{font-family:var(--f-mono);font-size:19px;color:var(--ink);opacity:.25;transform:translateX(-8px);transition:.45s var(--ease)}
+.news-row:hover{padding-left:22px;background:linear-gradient(90deg,var(--paper-2),transparent 70%)}
+.news-row:hover .ar{opacity:1;transform:translateX(0)}
+@media(max-width:720px){.news-row{grid-template-columns:auto 1fr;gap:8px 16px;align-items:start}.news-row time{grid-row:1;grid-column:1}.news-row .cat{grid-row:1;grid-column:2;justify-self:start;padding:4px 12px}.news-row p{grid-row:2;grid-column:1/3;margin-top:2px}.news-row .ar{display:none}}
+.biz{padding:128px 0 120px}
+.sec-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:end;margin-bottom:64px}
+.sec-head h2{font-family:var(--f-jp-h);font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.28;letter-spacing:.02em;margin-top:20px}
+.sec-head .en-big{font-family:var(--f-en);font-weight:600;font-size:clamp(40px,7vw,86px);line-height:.92;text-transform:uppercase;letter-spacing:-.02em;margin-top:14px}
+.biz-list{border-top:1px solid var(--ink)}
+.biz-item{display:grid;grid-template-columns:54px 1fr 400px 32px;gap:40px;align-items:start;padding:46px 8px;border-bottom:1px solid var(--line);position:relative;transition:.5s var(--ease)}
+.biz-item .no{font-family:var(--f-mono);font-size:14px;color:var(--sub);padding-top:8px}
+.biz-item .tt h3{font-family:var(--f-jp);font-weight:800;font-size:clamp(21px,2.5vw,30px);letter-spacing:.01em;line-height:1.3;transition:.5s var(--ease)}
+.biz-item .tt .en{font-family:var(--f-en);font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-top:8px}
+.biz-item .tt p{color:var(--sub);font-size:14px;margin-top:18px;max-width:560px;line-height:1.85}
+.biz-item .thumb{width:100%;height:248px;overflow:hidden;background:var(--ink)}
+.biz-item .thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:.7s var(--ease)}
+.biz-item .go{font-family:var(--f-mono);font-size:22px;color:var(--ink);align-self:center;transition:.5s var(--ease);opacity:.25}
+.biz-item:hover{padding-left:24px;background:linear-gradient(90deg,var(--paper-2),transparent 70%)}
+.biz-item:hover .tt h3{color:var(--ink)}
+.biz-item:hover .thumb img{transform:scale(1.05);filter:grayscale(.45) contrast(1.05)}
+.biz-item:hover .go{opacity:1;color:var(--yellow-d);transform:translateX(4px)}
+
+/* ====== ③ 強み ── 黒の宣言＋工程インライン ====== */
+.cred{background:var(--ink);color:var(--paper);padding:130px 0;overflow:hidden}
+.cred .kicker{color:var(--sub-2)}
+.cred-state{font-family:var(--f-jp);font-weight:500;font-size:clamp(21px,3vw,37px);line-height:1.7;letter-spacing:.05em;max-width:860px;margin:32px 0 0}
+.cred-state em{font-style:normal;font-weight:700}
+.cred-state b{color:var(--yellow);font-weight:700;display:inline-block;margin-top:.4em}
+.proc{display:grid;grid-template-columns:repeat(5,1fr);margin-top:88px;border-top:1px solid var(--line-d)}
+.proc-s{padding:34px 24px 0;border-right:1px solid var(--line-d);position:relative}
+.proc-s:last-child{border-right:0}
+.proc-s .pn{font-family:var(--f-mono);font-size:12px;color:var(--yellow);letter-spacing:.1em}
+.proc-s h4{font-family:var(--f-jp);font-weight:700;font-size:21px;margin:18px 0 8px}
+.proc-s p{font-size:13px;color:var(--sub-2);line-height:1.8}
+.proc-s::before{content:"";position:absolute;top:-1px;left:0;width:0;height:2px;background:var(--yellow);transition:.6s var(--ease)}
+.proc-s.in::before{width:100%}
+.proc-s:nth-child(2)::before{transition-delay:.1s}
+.proc-s:nth-child(3)::before{transition-delay:.2s}
+.proc-s:nth-child(4)::before{transition-delay:.3s}
+.proc-s:nth-child(5)::before{transition-delay:.4s}
+
+/* ====== ④ 数字 ── モノトーン極細ナンバー ====== */
+.fig{padding:122px 0}
+.fig-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);margin-top:54px}
+.fig-c{padding:42px 26px 36px;border-right:1px solid var(--line)}
+.fig-c:last-child{border-right:0}
+.fig-c .lbl{font-family:var(--f-en);font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sub)}
+.fig-c .v{font-family:var(--f-en);font-weight:500;font-size:clamp(48px,6vw,84px);line-height:1;letter-spacing:-.025em;margin:18px 0 10px}
+.fig-c .v small{font-family:var(--f-jp);font-weight:500;font-size:.26em;letter-spacing:0;margin-left:4px;color:var(--sub)}
+.fig-c .v .u{color:var(--yellow-d)}
+.fig-c .d{font-size:13px;color:var(--sub)}
+
+/* ====== ⑤ 実績 ── 大判ギャラリー（非対称・余白） ====== */
+.works{padding:0 0 124px}
+.works-band{display:grid;grid-template-columns:1.5fr 1fr;gap:0;border-top:1px solid var(--ink)}
+.wk-big{position:relative;overflow:hidden;background:var(--ink);aspect-ratio:16/11}
+.wk-big img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.92);transition:1.1s var(--ease)}
+.wk-big:hover img{filter:grayscale(.4) brightness(.85);transform:scale(1.04)}
+.wk-big .ov{position:absolute;left:0;bottom:0;padding:34px;color:var(--paper)}
+.wk-big .ov .c{font-family:var(--f-en);font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--yellow)}
+.wk-big .ov h4{font-family:var(--f-jp);font-weight:700;font-size:23px;margin-top:8px}
+.wk-side{display:flex;flex-direction:column}
+.wk-row{display:grid;grid-template-columns:104px 1fr;gap:22px;align-items:center;padding:24px 0 24px 30px;border-bottom:1px solid var(--line);transition:.4s var(--ease)}
+.wk-row:first-child{border-top:0}
+.wk-row .mini{width:104px;height:74px;overflow:hidden;background:var(--ink)}
+.wk-row .mini img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.wk-row .c{font-family:var(--f-en);font-weight:500;font-size:10.5px;letter-spacing:.14em;color:var(--sub)}
+.wk-row h4{font-family:var(--f-jp);font-weight:700;font-size:17px;margin-top:4px}
+.wk-row:hover{padding-left:40px;color:var(--ink)}
+.wk-row:hover .mini img{filter:grayscale(.3)}
+.works-tags{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:38px;padding-top:30px;border-top:1px solid var(--line)}
+.works-tags .l{font-family:var(--f-en);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub);margin-right:8px}
+.works-tags span{font-size:13px;color:var(--sub);border:1px solid var(--line);padding:7px 16px;transition:.3s}
+.works-tags span:hover{border-color:var(--ink);color:var(--ink)}
+
+/* ====== ⑥ 品質・安全 ── オフ白カラム ＋ 細罫 ====== */
+.qa{background:var(--paper-2);padding:124px 0}
+.qa-top{display:grid;grid-template-columns:.95fr 1.05fr;gap:46px;align-items:end;margin-bottom:60px}
+.qa-top h2{font-family:var(--f-jp-h);font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.34;letter-spacing:.02em;margin-top:18px}
+.qa-top h2 em{font-style:normal;border-bottom:3px solid var(--yellow);padding-bottom:2px}
+.qa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.qa-c{padding:40px 30px 44px;border-right:1px solid var(--line);position:relative}
+.qa-c:last-child{border-right:0}
+.qa-c .no{font-family:var(--f-mono);font-size:12px;color:var(--sub)}
+.qa-c .ic{width:46px;height:46px;margin:26px 0 22px}
+.qa-c .ic svg{width:46px;height:46px;stroke:var(--ink);fill:none;stroke-width:1.3}
+.qa-c h4{font-family:var(--f-jp);font-weight:700;font-size:19px}
+.qa-c h4 small{font-family:var(--f-en);display:block;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-bottom:8px}
+.qa-c p{font-size:13.5px;color:var(--sub);margin-top:12px;line-height:1.85}
+
+/* ====== ⑦ 会社・沿革 ── 整列タイムライン ====== */
+.co{padding:124px 0}
+.co-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:flex-start}
+.co-l{position:sticky;top:120px}
+.co-l h2{font-family:var(--f-jp-h);font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.3;letter-spacing:.02em;margin-top:18px}
+.co-l .gr{margin-top:28px;color:var(--sub);font-size:14.5px;max-width:380px}
+.co-l .sign{margin-top:24px;font-family:var(--f-jp);font-weight:700;font-size:16px}
+.co-l .sign small{display:block;font-family:var(--f-en);font-weight:500;font-size:10px;letter-spacing:.2em;color:var(--sub);text-transform:uppercase;margin-top:4px}
+.hist{border-top:1px solid var(--ink)}
+.hist-i{display:grid;grid-template-columns:130px 1fr;gap:30px;padding:30px 6px;border-bottom:1px solid var(--line);transition:.4s var(--ease)}
+.hist-i .y{font-family:var(--f-en);font-weight:500;font-size:34px;letter-spacing:-.02em;line-height:1}
+.hist-i h4{font-family:var(--f-jp);font-weight:700;font-size:18px;margin-bottom:6px}
+.hist-i p{font-size:13.5px;color:var(--sub)}
+.hist-i:hover{padding-left:18px}
+.hist-i:hover .y{color:var(--yellow-d)}
+
+/* ====== ⑧ 採用 ── 黒帯ミニマル ＋ 1枚画 ====== */
+.rec{background:var(--ink);color:var(--paper);padding:0;overflow:hidden}
+.rec-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
+.rec-l{padding:118px 56px 118px 0}
+.rec-l .kicker{color:var(--sub-2)}
+.rec-l h2{font-family:var(--f-en);font-weight:700;font-size:clamp(40px,6vw,84px);line-height:.96;text-transform:uppercase;letter-spacing:-.02em;margin:26px 0 8px}
+.rec-l h2 .y{color:var(--yellow);font-weight:500}
+.rec-l .jp{font-family:var(--f-jp);font-weight:700;font-size:20px;margin-bottom:18px}
+.rec-l p{color:var(--sub-2);max-width:440px;margin-bottom:34px;font-size:14.5px}
+.rec-links{display:flex;flex-direction:column;border-top:1px solid var(--line-d)}
+.rec-links a{display:flex;align-items:center;justify-content:space-between;padding:22px 4px;border-bottom:1px solid var(--line-d);font-family:var(--f-jp);font-weight:700;font-size:18px;transition:.4s var(--ease)}
+.rec-links a small{font-family:var(--f-en);font-weight:500;font-size:11px;letter-spacing:.14em;color:var(--sub-2);text-transform:uppercase}
+.rec-links a .ar{font-family:var(--f-mono);color:var(--yellow)}
+.rec-links a:hover{padding-left:18px;color:var(--yellow)}
+.rec-r{position:relative;overflow:hidden;min-height:520px;background:var(--ink-2)}
+.rec-r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06) brightness(.85)}
+.rec-r::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink),transparent 36%)}
+
+/* ====== ⑨ CTA ── 巨大タイポ・ミニマル ====== */
+.cta{padding:168px 0 160px;text-align:center}
+.cta .kicker{justify-content:center}
+.cta h2{font-family:var(--f-en);font-weight:700;font-size:clamp(34px,3.9vw,60px);line-height:1.04;text-transform:uppercase;letter-spacing:.05em;margin:34px 0 0}
+.cta h2 .d{color:var(--yellow);font-size:.3em;vertical-align:.28em;margin-left:.06em}
+.cta .jp{font-family:var(--f-jp);font-weight:500;font-size:clamp(14px,1.5vw,17px);color:var(--sub);letter-spacing:.02em;margin-top:26px;margin-bottom:52px}
+.cta .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta .btns .btn{min-width:252px;justify-content:center;padding:19px 32px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:13px;letter-spacing:.05em}
+.cta .btns .btn:hover{background:var(--ink);color:var(--paper)}
+.cta .btns .btn.fill{background:transparent;color:var(--ink)}
+.cta .btns .btn.fill:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+/* ---- フッター ---- */
+.ft{background:var(--ink);color:var(--sub-2);padding:80px 0 34px}
+.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:54px;border-bottom:1px solid var(--line-d)}
+.ft-brand .mk{width:42px;height:42px;background:var(--paper);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.ft-brand .mk img{width:26px}
+.ft-brand .nm{font-family:var(--f-jp);font-weight:700;font-size:18px;color:var(--paper)}
+.ft-brand .nm small{display:block;font-family:var(--f-en);font-weight:500;font-size:9px;letter-spacing:.26em;color:var(--sub);text-transform:uppercase;margin-top:3px}
+.ft-brand address{font-style:normal;font-size:13px;margin-top:18px;line-height:1.95}
+.ft-brand .tel{font-family:var(--f-mono);color:var(--yellow);font-size:18px;margin-top:14px}
+.ft-col h5{font-family:var(--f-en);color:var(--paper);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+.ft-col a{display:flex;gap:9px;font-size:13px;padding:6px 0;transition:.3s}
+.ft-col a span{font-family:var(--f-mono);font-size:10px;color:var(--yellow)}
+.ft-col a:hover{color:var(--paper);padding-left:5px}
+.ft-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em}
+
+/* ---- reveal ---- */
+.rv{opacity:0;transform:translateY(30px);transition:.9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ===================== レスポンシブ ===================== */
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:1fr 270px}
+}
+@media(max-width:900px){
+  .gnav,.hd-c{display:none}.burger{display:flex}
+  .hero-grid{grid-template-columns:1fr;gap:40px}.hero-r{max-width:320px}
+  .sec-head,.qa-top,.co-grid,.rec-grid,.works-band{grid-template-columns:1fr}
+  .co-l{position:static}
+  .proc{grid-template-columns:1fr 1fr}.proc-s{border-bottom:1px solid var(--line-d)}
+  .fig-grid{grid-template-columns:1fr 1fr}.fig-c:nth-child(2){border-right:0}.fig-c{border-bottom:1px solid var(--line)}
+  .qa-grid{grid-template-columns:1fr}.qa-c{border-right:0;border-bottom:1px solid var(--line)}
+  .rec-l{padding:90px 0 70px}.rec-r{min-height:340px}
+  .ft-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .wrap{padding:0 22px}.hd-in{padding:18px 22px}
+  .hero{padding:96px 0 40px}
+  .biz-item{grid-template-columns:46px 1fr;gap:6px 14px;align-items:start;padding:34px 6px}
+  .biz-item .no{grid-column:1;grid-row:1;padding-top:4px}
+  .biz-item .tt{grid-column:2;grid-row:1}
+  .biz-item .thumb{grid-column:1/3;grid-row:2;width:100%;height:200px;margin-top:18px}
+  .biz-item .go{display:none}
+  .biz-item:hover{padding-left:6px}
+  .marq-tr{font-size:15px}
+  .hist-i{grid-template-columns:80px 1fr;gap:16px}.hist-i .y{font-size:26px}
+  .ft-top{grid-template-columns:1fr}
+  .mnav a{font-size:24px}
+  .cta{padding:118px 0 110px}
+  .cta .btns{flex-direction:column;align-items:stretch;gap:13px}
+  .cta .btns .btn{width:100%;min-width:0;max-width:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="hd" id="hd">
+  <div class="hd-in">
+    <a class="brand" href="攝津電機工業_デザイン案.html">
+      <span class="mk"><img src="images/logo_symbol.png" alt="SD"></span>
+      <span class="nm"><b>攝津電機工業</b><small>Settsu Denki Kogyo</small></span>
+    </a>
+    <nav class="gnav">
+      <a href="攝津電機工業_会社概要_B.html"><span>01</span>About</a>
+      <a href="攝津電機工業_事業内容_B.html"><span>02</span>Business</a>
+      <a href="攝津電機工業_実績_B.html"><span>03</span>Works</a>
+      <a href="攝津電機工業_品質安全_B.html"><span>04</span>Quality</a>
+      <a href="攝津電機工業_採用情報_B.html"><span>05</span>Recruit</a>
+      <a href="攝津電機工業_お知らせ_B.html"><span>06</span>News</a>
+    </nav>
+    <a class="hd-c" href="攝津電機工業_お問い合わせ_B.html"><i></i>Contact</a>
+    <button class="burger" id="burger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mnav" id="mnav">
+  <a href="攝津電機工業_会社概要_B.html"><small>01</small>About<b>会社概要</b></a>
+  <a href="攝津電機工業_事業内容_B.html"><small>02</small>Business<b>事業内容</b></a>
+  <a href="攝津電機工業_実績_B.html"><small>03</small>Works<b>実績</b></a>
+  <a href="攝津電機工業_品質安全_B.html"><small>04</small>Quality<b>品質・安全</b></a>
+  <a href="攝津電機工業_採用情報_B.html"><small>05</small>Recruit<b>採用情報</b></a>
+  <a href="攝津電機工業_お問い合わせ_B.html"><small>06</small>Contact<b>お問い合わせ</b></a>
+</nav>
+
+<!-- ===== ① HERO ── 型F 余白大ミニマル帯 ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-l">
+        <div class="eyebrow">Settsu Denki Kogyo Co., Ltd.</div>
+        <h1 class="hero-h">Control<span class="l2">the&nbsp;Future<span class="dot">.</span></span></h1>
+        <p class="hero-jp">制御するチカラが、社会を動かす。</p>
+        <p class="hero-sub">電気設計から盤製作・現場施工まで、ひとつの窓口で。1947年、箕面。社会を“動かしつづける”技術を、攝津電機工業は静かに支えてきました。</p>
+        <div class="hero-foot">
+          <a class="lnk" href="攝津電機工業_事業内容_B.html">View Business <span class="ar">→</span></a>
+          <span class="scrollcue">SCROLL</span>
+        </div>
+      </div>
+      <div class="hero-r">
+        <span class="yb"></span>
+        <div class="ph"><img src="images/top_main01.jpg" alt="制御技術"></div>
+        <div class="cap"><span>FIG.01 — CONTROL ROOM</span><span>SD</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="marq">
+    <div class="marq-tr">
+      <span>電気設計</span><i>/</i><span>配電盤・制御盤</span><i>/</i><span>官公庁インフラ</span><i>/</i><span>民間プラント</span><i>/</i><span>現場施工</span><i>/</i><span>保守</span><i>/</i>
+      <span>電気設計</span><i>/</i><span>配電盤・制御盤</span><i>/</i><span>官公庁インフラ</span><i>/</i><span>民間プラント</span><i>/</i><span>現場施工</span><i>/</i><span>保守</span><i>/</i>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お知らせ ── ニュースリリース欄（必須要素） ===== -->
+<section class="news">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:0">
+      <div>
+        <span class="kicker">News Release</span>
+        <h2>お知らせ。</h2>
+      </div>
+      <div style="display:flex;align-items:flex-end;justify-content:flex-end">
+        <a class="lnk" href="攝津電機工業_お知らせ_B.html">View All News <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="news-list rv">
+      <a class="news-row" href="攝津電機工業_お知らせ_B.html"><time>2026.06.01</time><span class="cat">Release</span><p>コーポレートサイトをリニューアルしました。</p><span class="ar">→</span></a>
+      <a class="news-row" href="攝津電機工業_お知らせ_B.html"><time>2026.05.20</time><span class="cat">Topics</span><p>箕面本社にて配電盤・制御盤の製作ラインを増強しました。</p><span class="ar">→</span></a>
+      <a class="news-row" href="攝津電機工業_お知らせ_B.html"><time>2026.04.15</time><span class="cat">Business</span><p>上下水道インフラの電気設備更新工事を受注しました。</p><span class="ar">→</span></a>
+      <a class="news-row" href="攝津電機工業_お知らせ_B.html"><time>2026.04.01</time><span class="cat">Recruit</span><p>2027年度 新卒採用エントリーの受付を開始しました。</p><span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ② 事業 ── エディトリアル・インデックス列 ===== -->
+<section class="biz">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="kicker">Our Business</span>
+        <h2>電気の“できる”を、<br>領域を越えて。</h2>
+      </div>
+      <div>
+        <div class="en-big">Three<br>Fields.</div>
+      </div>
+    </div>
+    <div class="biz-list rv">
+      <a class="biz-item" href="攝津電機工業_事業内容_B.html#public">
+        <span class="no">(01)</span>
+        <div class="tt"><h3>官公庁向けソリューション</h3><div class="en">Public Infrastructure</div>
+          <p>上下水道・道路といった社会インフラの電気設備を、設計から製作・施工まで。暮らしのライフラインを止めない、確かな技術で。</p></div>
+        <div class="thumb"><img src="images/top_main04.jpg" alt=""></div>
+        <span class="go">↗</span>
+      </a>
+      <a class="biz-item" href="攝津電機工業_事業内容_B.html#private">
+        <span class="no">(02)</span>
+        <div class="tt"><h3>民間企業向けソリューション</h3><div class="en">Private Plant</div>
+          <p>工場の生産設備や各種プラント設備の省力化・効率化を、電気制御の側から。現場の課題に寄り添い、生産性を高めます。</p></div>
+        <div class="thumb"><img src="images/top_main02.jpg" alt=""></div>
+        <span class="go">↗</span>
+      </a>
+      <a class="biz-item" href="攝津電機工業_事業内容_B.html#panel">
+        <span class="no">(03)</span>
+        <div class="tt"><h3>配電盤・制御盤の製作</h3><div class="en">Switchboard &amp; Control Panel</div>
+          <p>当社の中核技術。電気設計から盤の製作、現場据付・調整までを自社一貫で。一台ごとに最適化した“動く”制御をつくります。</p></div>
+        <div class="thumb"><img src="images/top_img_service01.jpg" alt=""></div>
+        <span class="go">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ③ 強み ── 黒の宣言＋工程インライン ===== -->
+<section class="cred">
+  <div class="wrap">
+    <span class="kicker dk rv">Our Strength</span>
+    <p class="cred-state rv">設計事務所でも、施工会社でもない。<br>相談から施工まで、電気を<em>“トータル”</em>で手がける。<br>だから窓口はひとつ、責任もひとつ。<b>品質も納期も、ぶれない。</b></p>
+    <div class="proc">
+      <div class="proc-s"><div class="pn">STEP 01</div><h4>相談</h4><p>課題のヒアリングと最適なご提案。</p></div>
+      <div class="proc-s"><div class="pn">STEP 02</div><h4>電気設計</h4><p>仕様に合わせた回路・盤設計。</p></div>
+      <div class="proc-s"><div class="pn">STEP 03</div><h4>盤製作</h4><p>自社での配電盤・制御盤製作。</p></div>
+      <div class="proc-s"><div class="pn">STEP 04</div><h4>現場施工</h4><p>据付・配線・試運転調整。</p></div>
+      <div class="proc-s"><div class="pn">STEP 05</div><h4>保守</h4><p>稼働後のメンテナンス対応。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ④ 数字 ── モノトーン極細ナンバー ===== -->
+<section class="fig">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:0">
+      <div>
+        <span class="kicker">Settsu in Numbers</span>
+        <h2>数字で見る、<br><span style="white-space:nowrap">攝津電機工業。</span></h2>
+      </div>
+      <p class="lead">創業から積み上げた時間と、少数精鋭の技術が、いまの信頼をかたちづくっています。</p>
+    </div>
+    <div class="fig-grid rv">
+      <div class="fig-c"><div class="lbl">Established</div><div class="v"><span class="count" data-to="1947" data-raw="1">1947</span></div><div class="d">1947年創業 ─ 電気のトータル技術</div></div>
+      <div class="fig-c"><div class="lbl">Employees</div><div class="v"><span class="count" data-to="56">0</span><small>名</small></div><div class="d">少数精鋭の技術者集団</div></div>
+      <div class="fig-c"><div class="lbl">Annual Sales</div><div class="v"><span class="count" data-to="15.2" data-dec="1">0</span><small>億円</small></div><div class="d">安定した事業基盤</div></div>
+      <div class="fig-c"><div class="lbl">Areas</div><div class="v"><span class="count" data-to="4">0</span><small>拠点</small></div><div class="d">大阪・四国・九州ほか</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑤ 実績 ── 大判ギャラリー（非対称） ===== -->
+<section class="works">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="kicker">Selected Works</span>
+        <h2>こんなところに、<br><span style="white-space:nowrap">攝津電機工業。</span></h2>
+      </div>
+      <p class="lead">普段は目に触れない場所で、暮らしと産業を支える。社会インフラの“見えない貢献”を、実績でご紹介します。</p>
+    </div>
+    <div class="works-band rv">
+      <a class="wk-big" href="攝津電機工業_実績_B.html">
+        <img src="images/business_img02.jpg" alt="上下水道ポンプ場の電気設備更新">
+        <div class="ov"><div class="c">PUBLIC / INFRASTRUCTURE</div><h4>上下水道ポンプ場の電気設備更新</h4></div>
+      </a>
+      <div class="wk-side">
+        <a class="wk-row" href="攝津電機工業_実績_B.html"><div class="mini"><img src="images/business_img01.jpg" alt=""></div><div><div class="c">PRIVATE / FACTORY</div><h4>生産ラインの省力化制御</h4></div></a>
+        <a class="wk-row" href="攝津電機工業_実績_B.html"><div class="mini"><img src="images/top_main04.jpg" alt=""></div><div><div class="c">ENERGY</div><h4>受変電設備の更新</h4></div></a>
+        <a class="wk-row" href="攝津電機工業_実績_B.html"><div class="mini"><img src="images/top_main03.jpg" alt=""></div><div><div class="c">ROAD / SMART</div><h4>道路インフラの監視制御</h4></div></a>
+        <a class="wk-row" href="攝津電機工業_実績_B.html"><div class="mini"><img src="images/top_img_service01.jpg" alt=""></div><div><div class="c">CONTROL PANEL</div><h4>特注制御盤の設計製作</h4></div></a>
+      </div>
+    </div>
+    <div class="works-tags rv">
+      <span class="l">Major Clients</span>
+      <span>官公庁・自治体</span><span>大手プラントメーカー</span><span>水処理事業者</span><span>ゼネコン</span><span>設備工事会社</span>
+      <a class="lnk" style="margin-left:auto" href="攝津電機工業_実績_B.html">All Works <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑥ 品質・安全 ── オフ白カラム ===== -->
+<section class="qa">
+  <div class="wrap">
+    <div class="qa-top rv">
+      <div>
+        <span class="kicker">Quality &amp; Safety</span>
+        <h2>止めない、<em>守る</em>。</h2>
+      </div>
+      <p class="lead">インフラを支える会社だからこそ、製品の品質も、情報の安全も妥協しない。最新のWeb・セキュリティ基盤とともに、信頼を未来へつなぎます。</p>
+    </div>
+    <div class="qa-grid rv">
+      <div class="qa-c">
+        <div class="no">(01)</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4><small>Quality Management</small>一貫体制の品質管理</h4>
+        <p>設計から製作・検査まで自社一貫。工程ごとの検査で、一台ごとの品質を保証します。</p>
+      </div>
+      <div class="qa-c">
+        <div class="no">(02)</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="2.4"/><path d="M12 12.4V16"/></svg></div>
+        <h4><small>Safety &amp; License</small>有資格者による安全施工</h4>
+        <p>電気工事士をはじめとする有資格者が、現場の安全基準を徹底。事故ゼロを当たり前に。</p>
+      </div>
+      <div class="qa-c">
+        <div class="no">(03)</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h4><small>Web Security</small>堅牢なWeb・情報基盤</h4>
+        <p>常時SSL・最新CMS・安定サーバーへ刷新。お客様の情報を守る、近未来の運用体制へ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑦ 会社・沿革 ── 整列タイムライン ===== -->
+<section class="co">
+  <div class="wrap co-grid">
+    <div class="co-l rv">
+      <span class="kicker">Company / History</span>
+      <h2>箕面から、<br>社会を動かして。</h2>
+      <p class="gr">1947年の創業以来、電気設計・盤製作・施工を通じて、官公庁と民間の現場を支えてまいりました。「電気でできることのすべてを」を信条に、これからも社会の“動き続ける”に貢献します。</p>
+      <div class="sign">代表取締役<small>Settsu Denki Kogyo Co., Ltd.</small></div>
+      <a class="lnk" style="margin-top:26px" href="攝津電機工業_会社概要_B.html">Company Profile <span class="ar">→</span></a>
+    </div>
+    <div class="hist rv">
+      <div class="hist-i"><div class="y">1947</div><div><h4>創業</h4><p>大阪・箕面にて電気設計・製作の事業を開始。</p></div></div>
+      <div class="hist-i"><div class="y">1972</div><div><h4>法人設立</h4><p>攝津電機工業株式会社として法人登記。配電・制御盤製作を本格化。</p></div></div>
+      <div class="hist-i"><div class="y">1980</div><div><h4>官公庁インフラへ展開</h4><p>上下水道・道路インフラの電気設備を手がける。</p></div></div>
+      <div class="hist-i"><div class="y">2000</div><div><h4>拠点拡大</h4><p>四国・九州・大阪駅前など対応エリアを拡大。</p></div></div>
+      <div class="hist-i"><div class="y">2026</div><div><h4>コーポレートサイト刷新</h4><p>近未来的なブランドへ。最新Web基盤でセキュリティを強化。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑧ 採用 ── 黒帯ミニマル ＋ 1枚画 ===== -->
+<section class="rec">
+  <div class="rec-grid">
+    <div class="wrap" style="display:contents">
+      <div class="rec-l rv" style="padding-left:max(40px,calc((100vw - 1280px)/2 + 40px))">
+        <span class="kicker">Recruit</span>
+        <h2>Join<span class="y">.</span></h2>
+        <p class="jp">人と、未来をつくる。</p>
+        <p>社会を支える電気の仕事は、人の手から生まれます。少数精鋭だからこそ、若手も裁量を持って成長できる環境がここにあります。</p>
+        <div class="rec-links">
+          <a href="攝津電機工業_採用情報_B.html#new">新卒採用<span style="display:flex;gap:16px;align-items:center"><small>New Graduate</small><span class="ar">→</span></span></a>
+          <a href="攝津電機工業_採用情報_B.html#mid">中途採用<span style="display:flex;gap:16px;align-items:center"><small>Career</small><span class="ar">→</span></span></a>
+          <a href="攝津電機工業_採用情報_B.html#voice">社員インタビュー<span style="display:flex;gap:16px;align-items:center"><small>Interview ─ Soon</small><span class="ar">→</span></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="rec-r"><img src="images/top_img_service03.jpg" alt="攝津電機工業で働く"></div>
+  </div>
+</section>
+
+<!-- ===== ⑨ CTA ── 巨大タイポ ===== -->
+<section class="cta">
+  <div class="wrap rv">
+    <span class="kicker">Contact</span>
+    <h2>Let's&nbsp;talk<span class="d">.</span></h2>
+    <p class="jp">ご相談・お見積りは、お気軽にどうぞ。</p>
+    <div class="btns">
+      <a class="btn fill" href="攝津電機工業_お問い合わせ_B.html">お問い合わせフォーム <span class="ar">→</span></a>
+      <a class="btn" href="tel:0727292341">TEL 072-729-2341</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <span class="mk"><img src="images/logo_symbol.png" alt="SD"></span>
+        <div class="nm">攝津電機工業株式会社<small>Settsu Denki Kogyo Co., Ltd.</small></div>
+        <address>〒562-0015<br>大阪府箕面市稲6-2-1</address>
+        <div class="tel">072-729-2341</div>
+      </div>
+      <div class="ft-col">
+        <h5>Business</h5>
+        <a href="攝津電機工業_事業内容_B.html"><span>01</span>事業内容</a>
+        <a href="攝津電機工業_実績_B.html"><span>02</span>実績・導入事例</a>
+        <a href="攝津電機工業_品質安全_B.html"><span>03</span>品質・安全</a>
+      </div>
+      <div class="ft-col">
+        <h5>Company</h5>
+        <a href="攝津電機工業_会社概要_B.html"><span>04</span>会社概要・沿革</a>
+        <a href="攝津電機工業_採用情報_B.html"><span>05</span>採用情報</a>
+        <a href="攝津電機工業_お知らせ_B.html"><span>06</span>お知らせ</a>
+      </div>
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <a href="攝津電機工業_お問い合わせ_B.html"><span>07</span>お問い合わせ</a>
+        <a href="攝津電機工業_お問い合わせ_B.html#faq"><span>08</span>よくある質問</a>
+        <a href="攝津電機工業_お問い合わせ_B.html#privacy"><span>09</span>プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 SETTSU DENKI KOGYO CO., LTD.</span>
+      <span>CONTROL THE FUTURE ─ SINCE 1947</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hd=document.getElementById('hd'),burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+addEventListener('scroll',()=>{hd.classList.toggle('mini',scrollY>30)});
+burger.addEventListener('click',()=>{burger.classList.toggle('on');mnav.classList.toggle('on');document.body.style.overflow=mnav.classList.contains('on')?'hidden':''});
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('on');mnav.classList.remove('on');document.body.style.overflow=''}));
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// 工程バーの点灯
+const pio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in')}}),{threshold:.4});
+document.querySelectorAll('.proc-s').forEach(el=>pio.observe(el));
+
+// 数値カウントアップ
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;const el=e.target;cio.unobserve(el);
+  if(el.dataset.raw)return;
+  const to=parseFloat(el.dataset.to),dec=parseInt(el.dataset.dec||0);let s=null;
+  const step=t=>{if(!s)s=t;const p=Math.min((t-s)/1300,1);const v=to*(1-Math.pow(1-p,3));el.textContent=dec?v.toFixed(dec):Math.floor(v);if(p<1)requestAnimationFrame(step)};
+  requestAnimationFrame(step);
+},{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+</script>
+<script>/* fail-safe: 監視/アニメが効かなくても中身を必ず最終表示（数値は最終値・出現は即確定） */
+function sdFinalizeCounts(){document.querySelectorAll(".count").forEach(function(el){if(el.dataset.raw)return;var to=parseFloat(el.dataset.to),dec=parseInt(el.dataset.dec||0),cur=parseFloat(el.textContent);if(isNaN(cur)||cur<to)el.textContent=dec?to.toFixed(dec):String(to)})}
+function sdReveal(){document.querySelectorAll(".rv").forEach(function(el){var o=parseFloat(getComputedStyle(el).opacity);if(o<.99){el.style.transition="none";el.style.opacity="1";el.style.transform="none";el.classList.add("in")}})}
+window.addEventListener("load",function(){setTimeout(function(){sdReveal();sdFinalizeCounts()},1000)});
+if(!("IntersectionObserver" in window)){sdReveal();sdFinalizeCounts()}</script>
+</body>
+</html>
